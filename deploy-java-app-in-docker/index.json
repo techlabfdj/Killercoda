@@ -1,0 +1,37 @@
+{
+  "title": "build and Deploy a java app in docker",
+  "description": "Use Ubuntu + docker to build and Deploy the spring pet clinic bootstrap ",
+  "details": {
+    "intro": {
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "title": "Get Materials",
+        "text": "step1/step1.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Install java",
+        "text": "step2/step2.md",
+        "verify": "step2/verify.sh"
+      },
+      {
+        "title": "Build java image",
+        "text": "step3/step3.md",
+        "verify": "step3/verify.sh"
+      }
+      ,
+      {
+        "title": "Run the image",
+        "text": "step4/step4.md",
+        "verify": "step4/verify.sh"
+      }    ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}

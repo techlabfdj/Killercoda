@@ -1,0 +1,1 @@
+stat ~/workdir/spring-petclinic/README.md
