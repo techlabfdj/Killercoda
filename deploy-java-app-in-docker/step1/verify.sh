@@ -1,6 +1,6 @@
 #!/bin/bash
 
-readme_file="readme.md"
+readme_file="~/workdir/spring-petclinic/readme.md"
 
 # Vérifier si le fichier readme.md existe
 if [[ -f "$readme_file" ]]; then
