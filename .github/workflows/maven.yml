@@ -38,6 +38,5 @@ jobs:
 
     - uses: actions/upload-artifact@v3
       with:
-        working-directory: springbootsample
         name: Package
-        path: staging
+        path: springbootsample/staging
