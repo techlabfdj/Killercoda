@@ -42,6 +42,7 @@ jobs:
 #       path: springbootsample/staging
         
     - name: Publish to GitHub Packages Apache Maven
+      working-directory: springbootsample
       run: mvn deploy
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
