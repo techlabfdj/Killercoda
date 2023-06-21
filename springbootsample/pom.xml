@@ -52,11 +52,16 @@
 									<goal>build-image</goal>
 							</goals>
 					</execution>
+					<execution>
+							<goals>
+									<goal>repackage</goal>
+							</goals>
+					</execution>
 				</executions>
 				<configuration>
-				  <layers>
-            <enabled>true</enabled>
-	        </layers>
+					<layers>
+            			<enabled>true</enabled>
+					</layers>
 				</configuration>
 			</plugin>
 		</plugins>
