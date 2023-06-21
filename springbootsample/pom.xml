@@ -47,9 +47,12 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			        <configuration>
-				    <image>
-				        <name>ghcr.io/techlabfdj</name>
-				    </image>
+					<image>
+				        	<name>ghcr.io/techlabfdj</name>
+					</image>
+					<layers>
+	        	    			<enabled>true</enabled>
+					</layers>
 			        </configuration>				
 				<executions>
 					<execution>
@@ -65,11 +68,6 @@
 							</goals>
 					</execution>
 				</executions>
-				<configuration>
-					<layers>
-            			<enabled>true</enabled>
-					</layers>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
