@@ -34,7 +34,10 @@ jobs:
       run: mvn -B package --file pom.xml
 
     - run: mkdir staging && cp target/*.jar staging
+      working-directory: springbootsample
+
     - uses: actions/upload-artifact@v3
       with:
+        working-directory: springbootsample
         name: Package
         path: staging
