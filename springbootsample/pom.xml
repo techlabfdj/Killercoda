@@ -72,7 +72,7 @@
 		<repository>
 			<id>github</id>
 			<name>GitHub Packages</name>
-			<url>https://maven.pkg.github.com/springbootsample/</url>
+			<url>https://maven.pkg.github.com/techlabfdj/tempjava</url>
 		</repository>
 	</distributionManagement>
 </project>
