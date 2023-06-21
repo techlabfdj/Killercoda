@@ -51,5 +51,6 @@ jobs:
 
     - name: Push docker image to ghcr
       working-directory: springbootsample
-      run: docker push ghcr.io/techlabfdj/springbootsample:0.0.1-SNAPSHOT
+      #run: docker push ghcr.io/techlabfdj/springbootsample:0.0.1-SNAPSHOT
+      run: docker push ghcr.io/library/springbootsample:0.0.1-SNAPSHOT
 
