@@ -48,11 +48,13 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<executions>
 					<execution>
+							<id>docker-image-output</id>
 							<goals>
 									<goal>build-image</goal>
 							</goals>
 					</execution>
 					<execution>
+							<id>jar-output</id>
 							<goals>
 									<goal>repackage</goal>
 							</goals>
