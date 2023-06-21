@@ -14,6 +14,9 @@
 	<name>springbootsample</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
+	    <docker.image.prefix>ghcr.io/techlabfdj</docker.image.prefix>
+	</properties>
+	<properties>
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
@@ -46,9 +49,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				 <image>
-                    			<name>ghcr.io/techlabfdj/springbootsample:0.0.1-SNAPSHOT</name>
-                		</image>
 				<executions>
 					<execution>
 							<id>docker-image-output</id>
