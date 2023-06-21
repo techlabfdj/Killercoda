@@ -36,7 +36,12 @@ jobs:
     - run: mkdir staging && cp target/*.jar staging
       working-directory: springbootsample
 
-    - uses: actions/upload-artifact@v3
-      with:
-        name: Package
-        path: springbootsample/staging
+#    - uses: actions/upload-artifact@v3
+#      with:
+#        name: Package
+#       path: springbootsample/staging
+        
+    - name: Publish to GitHub Packages Apache Maven
+      run: mvn deploy
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
