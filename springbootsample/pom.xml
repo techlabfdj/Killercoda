@@ -46,6 +46,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				 <image>
+                    			<name>ghcr.io/techlabfdj/springbootsample:0.0.1-SNAPSHOT</name>
+                		</image>
 				<executions>
 					<execution>
 							<id>docker-image-output</id>
