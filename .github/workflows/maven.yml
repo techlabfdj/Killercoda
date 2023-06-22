@@ -29,9 +29,9 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
-    - name: Build with Maven
-      working-directory: springbootsample
-      run: mvn -B package --file pom.xml
+#    - name: Build with Maven
+#      working-directory: springbootsample
+#      run: mvn -B package --file pom.xml
 
 #    - run: mkdir staging && cp target/*.jar staging
 #      working-directory: springbootsample
