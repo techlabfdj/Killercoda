@@ -33,10 +33,7 @@ jobs:
 #      working-directory: springbootsample
 #      run: mvn -B package --file pom.xml
 
-#    - run: mkdir staging && cp target/*.jar staging
-#      working-directory: springbootsample
-
-    - name: Publish to GitHub Packages Apache Maven
+    - name: Build a jar and a docker image, then publish to GitHub Packages Apache Maven
       working-directory: springbootsample
       run: mvn deploy
       env:
