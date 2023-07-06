@@ -3,7 +3,9 @@
   "description": "Use Ubuntu + docker to build and Deploy the spring pet clinic bootstrap ",
   "details": {
     "intro": {
-      "text": "intro.md"
+      "text": "intro.md",
+      "foreground": "foreground.sh",
+      "background": "background.sh"
     },
     "steps": [
       {
