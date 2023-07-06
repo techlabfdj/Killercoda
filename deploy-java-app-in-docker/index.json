@@ -27,10 +27,10 @@
         "text": "step4/step4.md",
         "verify": "step4/verify.sh"
       }    ],
-      "assets": {
-        "host01": [
-          {"file": "step1/pom.xml", "target": "~/"}
-      ]},
+    "assets": {
+      "host01": [
+        {"file": "pom.xml", "target": "~/"}
+    ]},
     "finish": {
       "text": "finish.md"
     }
