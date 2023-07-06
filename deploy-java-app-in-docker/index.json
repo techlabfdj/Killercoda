@@ -29,7 +29,7 @@
       }    ],
       "assets": {
         "host01": [
-          {"file": "pom.xml", "target": "~/"}
+          {"file": "step1/pom.xml", "target": "~/"}
       ]},
     "finish": {
       "text": "finish.md"
