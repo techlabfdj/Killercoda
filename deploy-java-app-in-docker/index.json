@@ -31,10 +31,7 @@
       }    ],
     "assets": {
       "host01": [
-        {"file": "pom.xml", "target": "~/"},
-        {"file": "*", "target": "/all1"},
-        {"file": "**", "target": "/all2"},
-        {"file": "**/*.*", "target": "/all3"}
+        {"file": "pom.xml", "target": "~/"}
     ]},
     "finish": {
       "text": "finish.md"
