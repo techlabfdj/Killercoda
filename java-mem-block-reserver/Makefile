@@ -1,10 +1,10 @@
 .PHONY: all build start stop clean
 
-CONTAINER_NAME?=springbootsample
+CONTAINER_NAME?=java-mem-block-reserver
 START_OPTS?=
 STOP_OPTS?=
 LOGS_OPTS?=
-IMAGE_NAME?=springbootsample
+IMAGE_NAME?=java-mem-block-reserver
 IMAGE_TAG?=latest
 JAVA_OPTS?=
 DOCKER_REPOSITORY?=ghcr.io/techlabfdj
