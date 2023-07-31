@@ -3,18 +3,18 @@ name: Java CI with Maven
 on:
   push:
     paths:
-      - 'springbootsample/**'
+      - 'java-mem-block-reserver/**'
     branches: [ "main" ]
   pull_request:
     paths:
-      - 'springbootsample/**'
+      - 'java-mem-block-reserver/**'
     branches: [ "main" ]
 
 jobs:
   build:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      IMAGE_NAME: springbootsample
+      IMAGE_NAME: java-mem-block-reserver
       IMAGE_TAG: latest
       DOCKER_REPOSITORY: ghcr.io/techlabfdj
 
@@ -31,7 +31,7 @@ jobs:
         cache: maven
 
     - name: Build a jar and a docker image, then publish to GitHub Packages Apache Maven
-      working-directory: springbootsample
+      working-directory: java-mem-block-reserver
       run: mvn deploy -DartifactID=${{ env.IMAGE_NAME }} -DartifactVersion=${{ env.IMAGE_TAG }} -DdockerRepository=${{ env.DOCKER_REPOSITORY }}
 
     - name: Login to GitHub Container Registry
@@ -42,5 +42,5 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Push docker image to ghcr
-      working-directory: springbootsample
+      working-directory: java-mem-block-reserver
       run: docker push ${{ env.DOCKER_REPOSITORY }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
