@@ -9,8 +9,8 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.github.techlabfdj.tempjava</groupId>
-	<artifactId>springbootsample</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>${artifactID}</artifactId>
+	<version>${artifactVersion}</version>
 	<name>springbootsample</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -48,7 +48,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			        <configuration>
 					<image>
-				        	<name>ghcr.io/techlabfdj/springbootsample:0.0.1-SNAPSHOT</name>
+				        	<name>${dockerRepository}/${artifactID}:${artifactVersion}</name>
 					</image>
 					<layers>
 	        	    			<enabled>true</enabled>

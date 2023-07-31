@@ -7,15 +7,16 @@ LOGS_OPTS?=
 IMAGE_NAME?=springbootsample
 IMAGE_TAG?=latest
 JAVA_OPTS?=
+DOCKER_REPOSITORY?=ghcr.io/techlabfdj
 
 all: | build start
 
 build:
-	./mvnw package -Dspring-boot.build-image.imageName=$(IMAGE_NAME):$(IMAGE_TAG) -Dspring-boot.build-image.publish=false
+	./mvnw package -DartifactID=$(IMAGE_NAME) -DartifactVersion=$(IMAGE_TAG) -DdockerRepository=${DOCKER_REPOSITORY} -Dspring-boot.build-image.publish=false
 
 start:
 	@if docker container inspect $(CONTAINER_NAME) > /dev/null 2>&1; then docker container rm --force --volumes $(CONTAINER_NAME) > /dev/null && printf -- "%s | container was stopped/removed\n" "$$(date --rfc-3339=ns)"; fi
-	@docker run -d --pull never --name "$(CONTAINER_NAME)" -p 127.0.0.1:8080:8080 $(START_OPTS) -eJAVA_OPTS="$(JAVA_OPTS)" $(IMAGE_NAME):$(IMAGE_TAG) > /dev/null && printf -- "%s | container was started\n" "$$(date --rfc-3339=ns)"
+	@docker run -d --pull never --name "$(CONTAINER_NAME)" -p 127.0.0.1:8080:8080 $(START_OPTS) -eJAVA_OPTS="$(JAVA_OPTS)" ${DOCKER_REPOSITORY}/$(IMAGE_NAME):$(IMAGE_TAG) > /dev/null && printf -- "%s | container was started\n" "$$(date --rfc-3339=ns)"
 	@sleep .2; $(MAKE) status
 
 start-oomexit-disabled:
@@ -27,7 +28,7 @@ status:
 
 # @docker_stats=$(docker stats jdk8 --no-stream --no-trunc --format '{{json .}}'); for metric in "MemUsage" "MemPerc"; do printf -- "$${docker_stats} | xargs -I {} printf "%s | %s\n" "$$(date --rfc-3339=ns)" "{}" || break; done
 metrics:
-	@docker stats jdk8 --no-stream --no-trunc
+	@docker stats $(CONTAINER_NAME) --no-stream --no-trunc
 	@for metric in system.cpu.count; do value=$$(curl --silent --fail "http://127.0.0.1:8080/metrics/$${metric}") && { printf -- "$${value}" | jq -re '(.name | . + (20 - length) * " ") +" | "+(.measurements[] | select( .statistic == "VALUE" ) | .value | tostring | (. + (20 - length)*""))+ " | " +.baseUnit'; } | xargs -I {} printf "%s | %s\n" "$$(date --rfc-3339=ns)" "{}" || break; done
 	@for metric in "jvm.memory.used?tag=area:heap" "jvm.memory.max?tag=area:heap"; do value=$$(curl --silent --fail "http://127.0.0.1:8080/metrics/$${metric}") && { printf -- "$${value}" | jq -re '(.name | . + (20 - length) * " ") +" | "+(.measurements[] | select( .statistic == "VALUE" ) | (.value / (1024 * 1024) ) | round | tostring ) + " | " +"M"+.baseUnit'; } | xargs -I {} printf "%s | %s\n" "$$(date --rfc-3339=ns)" "{}" || break; done
 
@@ -41,6 +42,6 @@ logs:
 	if docker container inspect $(CONTAINER_NAME) > /dev/null 2>&1; then docker logs $(LOGS_OPTS) $(CONTAINER_NAME); fi
 
 clean:
-	./mvnw clean
+	./mvnw clean -DartifactID=$(IMAGE_NAME) -DartifactVersion=$(IMAGE_TAG) -DdockerRepository=${DOCKER_REPOSITORY}
 	if docker container inspect $(CONTAINER_NAME) > /dev/null 2>&1; then docker container rm --force --volumes $(CONTAINER_NAME); fi
-	for i in $$(docker image ls --quiet --filter "reference=$(IMAGE_NAME)*"); do docker image rm $$i || exit 1; done
+	for i in $$(docker image ls --quiet --filter "reference=${DOCKER_REPOSITORY}/$(IMAGE_NAME)*"); do docker image rm $$i || exit 1; done
