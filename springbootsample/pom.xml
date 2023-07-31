@@ -8,7 +8,7 @@
 		<version>3.1.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.github.techlabfdj.tempjava</groupId>
+	<groupId>com.github.techlabfdj.killercoda</groupId>
 	<artifactId>${artifactID}</artifactId>
 	<version>${artifactVersion}</version> 
 	<name>springbootsample</name>
@@ -75,7 +75,7 @@
 		<repository>
 			<id>github</id>
 			<name>GitHub Packages</name>
-			<url>https://maven.pkg.github.com/techlabfdj/tempjava</url>
+			<url>https://maven.pkg.github.com/techlabfdj/killercoda</url>
 		</repository>
 	</distributionManagement>
 </project>
