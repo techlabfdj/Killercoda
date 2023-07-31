@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.github.techlabfdj.tempjava</groupId>
 	<artifactId>${artifactID}</artifactId>
-	<version>${artifactVersion}</version>
+	<version>${artifactVersion}</version> 
 	<name>springbootsample</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
