@@ -39,8 +39,14 @@ func main() {
 	r.GET("/segments", func(c *gin.Context) {
 		listSegments(c, segmentRepo)
 	})
-	r.GET("/stats", func(c *gin.Context) {
-		c.JSON(200, GetStats())
+	r.GET("/metrics", func(c *gin.Context) {
+		c.JSON(200, GetMetrics())
+	})
+
+	r.GET("/health", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"status": "UP",
+		})
 	})
 
 	r.Run() // listen and serve on 0.0.0.0:8080

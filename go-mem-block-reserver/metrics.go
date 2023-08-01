@@ -11,12 +11,12 @@ type RuntimeInfo struct {
 	Version      string `json:"version"`
 }
 
-type Stat struct {
+type Metrics struct {
 	Runtime  RuntimeInfo      `json:"runtime"`
 	MemStats runtime.MemStats `json:"memstats"`
 }
 
-func GetStats() Stat {
+func GetMetrics() Metrics {
 	var memStats runtime.MemStats
 	runtime.ReadMemStats(&memStats)
 
@@ -27,7 +27,7 @@ func GetStats() Stat {
 		Version:      runtime.Version(),
 	}
 
-	return Stat{
+	return Metrics{
 		Runtime:  runtimeInfo,
 		MemStats: memStats,
 	}
