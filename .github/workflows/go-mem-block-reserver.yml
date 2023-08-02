@@ -11,7 +11,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  buildContainer:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       IMAGE_NAME: go-mem-block-reserver
@@ -42,3 +42,24 @@ jobs:
     - name: Push Docker image to ghcr
       working-directory: go-mem-block-reserver
       run: docker push ${{ env.DOCKER_REPOSITORY }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
+
+  buildBinary:
+    name: build go-mem-block-reserver binary
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        goos: [linux]
+        goarch: [amd64]
+
+    steps:
+      - name: Check out code into the Go module directory
+        uses: actions/checkout@v3
+
+      - name: Setup go and release
+        uses: wangyoucao577/go-release-action@v1.34
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN  }}
+          goos: ${{ matrix.goos }}
+          goarch: ${{ matrix.goarch }}
+          project_path: "./go-mem-block-reserver"
+          binary_name: "go-mem-block-reserver"
