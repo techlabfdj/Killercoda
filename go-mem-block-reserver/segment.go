@@ -22,6 +22,8 @@ type Segment struct {
 func getByteMultiplier(unit string) int {
 	var multiplier int
 	switch strings.ToUpper(unit) {
+	case "BYTES":
+		multiplier = 1
 	case "KILOBYTES":
 		multiplier = 1024
 	case "MEGABYTES":
