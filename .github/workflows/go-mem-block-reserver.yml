@@ -63,3 +63,5 @@ jobs:
           goarch: ${{ matrix.goarch }}
           project_path: "./go-mem-block-reserver"
           binary_name: "go-mem-block-reserver"
+          release_name: draft
+          overwrite: true
