@@ -28,7 +28,7 @@ The service exposes several HTTP endpoints:
 
 Here are some examples of how to use the service with `curl`:
 
-Reserve a block of memory: 
+Reserve a block of memory:
 
 ```bash
 curl -X POST -H "Content-Type: application/json" -d '{"size": 32, "unit": "megabytes"}' http://localhost:8080/segments
