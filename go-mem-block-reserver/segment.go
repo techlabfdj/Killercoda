@@ -34,6 +34,11 @@ func getByteMultiplier(unit string) int {
 	return multiplier
 }
 
+func (s Segment) String() string {
+	return fmt.Sprintf("Segment [ID=%s, Size=%d, Unit=%s, CreatedAt=%s, UpdatedAt=%s]",
+		s.ID, s.Size, s.Unit, s.CreatedAt, s.UpdatedAt)
+}
+
 func maxValue(unit string) int {
 	return math.MaxInt64 / getByteMultiplier(unit)
 }
@@ -56,7 +61,10 @@ func NewSegment(size int, unit string) (*Segment, error) {
 	// Use unit to compute real size
 	realSize := size * getByteMultiplier(unit)
 
-	data := make([]byte, realSize)
+	data := make([]byte, realSize, realSize)
+	for i := range data {
+		data[i] = 1
+	}
 	fmt.Printf("%d bytes allocated !", realSize)
 
 	return &Segment{
