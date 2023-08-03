@@ -1,6 +1,6 @@
 {
-  "title": "build and Deploy a java app in docker",
-  "description": "Use Ubuntu + docker to build and Deploy the spring pet clinic bootstrap ",
+  "title": "Containerized java app behaviour",
+  "description": "This project allows for experimentation with the behavior of a Java application within a container.",
   "details": {
     "intro": {
       "text": "intro.md",

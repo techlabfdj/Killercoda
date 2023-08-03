@@ -14,9 +14,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.github.techlabfdj.tempjava</groupId>
-            <artifactId>springbootsample</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <groupId>com.github.techlabfdj.killercoda</groupId>
+            <artifactId>java-mem-block-reserver</artifactId>
+            <version>latest</version>
         </dependency> 
     </dependencies>
 </project>
