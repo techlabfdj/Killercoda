@@ -15,6 +15,7 @@ jobs:
   build:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      SOURCE_FOLDER_NAME: java-mem-block-reserver
       IMAGE_NAME: java-mem-block-reserver
       IMAGE_TAG: latest
       DOCKER_REPOSITORY: ghcr.io/techlabfdj
@@ -71,7 +72,7 @@ jobs:
   
     - name: Copy jar to target repo
       run: |
-        cp ./target/${{env.IMAGE_NAME}}-j${{ matrix.Java }}-${{env.IMAGE_TAG}}.jar ./${{env.TARGET_REPO_PATH}}
+        cp ./${{env.SOURCE_FOLDER_NAME}}/target/${{env.IMAGE_NAME}}-j${{ matrix.Java }}-${{env.IMAGE_TAG}}.jar ./${{env.TARGET_REPO_PATH}}
 
     - name: Push to target repo
       run: |
