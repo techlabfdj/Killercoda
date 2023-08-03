@@ -10,7 +10,7 @@ JAVA_OPTS?=
 DOCKER_REPOSITORY?=ghcr.io/techlabfdj
 
 all: | build start 
-
+ 
 build:
 	./mvnw package -DartifactID=$(IMAGE_NAME) -DartifactVersion=$(IMAGE_TAG) -DdockerRepository=${DOCKER_REPOSITORY} -Dspring-boot.build-image.publish=false
 
