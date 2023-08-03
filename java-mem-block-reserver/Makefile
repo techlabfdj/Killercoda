@@ -8,11 +8,12 @@ IMAGE_NAME?=java-mem-block-reserver
 IMAGE_TAG?=latest
 JAVA_OPTS?=
 DOCKER_REPOSITORY?=ghcr.io/techlabfdj
+JAVA_VERSION?=17
 
 all: | build start 
  
 build:
-	./mvnw package -DartifactID=$(IMAGE_NAME) -DartifactVersion=$(IMAGE_TAG) -DdockerRepository=${DOCKER_REPOSITORY} -Dspring-boot.build-image.publish=false
+	./mvnw package -Dmatrix.java=$(JAVA_VERSION) -DartifactID=$(IMAGE_NAME) -DartifactVersion=$(IMAGE_TAG) -DdockerRepository=${DOCKER_REPOSITORY} -Dspring-boot.build-image.publish=false
 
 start:
 	@if docker container inspect $(CONTAINER_NAME) > /dev/null 2>&1; then docker container rm --force --volumes $(CONTAINER_NAME) > /dev/null && printf -- "%s | container was stopped/removed\n" "$$(date --rfc-3339=ns)"; fi
@@ -42,6 +43,6 @@ logs:
 	if docker container inspect $(CONTAINER_NAME) > /dev/null 2>&1; then docker logs $(LOGS_OPTS) $(CONTAINER_NAME); fi
 
 clean:
-	./mvnw clean -DartifactID=$(IMAGE_NAME) -DartifactVersion=$(IMAGE_TAG) -DdockerRepository=${DOCKER_REPOSITORY}
+	./mvnw clean -DjavaVersion=$(JAVA_VERSION) -DartifactID=$(IMAGE_NAME) -DartifactVersion=$(IMAGE_TAG) -DdockerRepository=${DOCKER_REPOSITORY}
 	if docker container inspect $(CONTAINER_NAME) > /dev/null 2>&1; then docker container rm --force --volumes $(CONTAINER_NAME); fi
 	for i in $$(docker image ls --quiet --filter "reference=${DOCKER_REPOSITORY}/$(IMAGE_NAME)*"); do docker image rm $$i || exit 1; done
