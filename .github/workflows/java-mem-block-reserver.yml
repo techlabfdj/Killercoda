@@ -65,6 +65,10 @@ jobs:
         repository: ${{env.TARGET_REPO}}
         path: ${{env.TARGET_REPO_PATH}}
 
+    - name: find 
+      run: |
+        find .
+  
     - name: Copy jar to target repo
       run: |
         cp ./target/${{env.IMAGE_NAME}}-j${{ matrix.Java }}-${{env.IMAGE_TAG}}.jar ./${{env.TARGET_REPO_PATH}}
