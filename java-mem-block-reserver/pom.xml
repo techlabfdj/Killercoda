@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.github.techlabfdj.killercoda</groupId>
-	<artifactId>${artifactID}-j${javaVersion}</artifactId>
+	<artifactId>${artifactID}</artifactId>
 	<version>${artifactVersion}</version> 
 	<name>java-mem-block-reserver</name>
 	<description>Java tools to test memory limits</description>
