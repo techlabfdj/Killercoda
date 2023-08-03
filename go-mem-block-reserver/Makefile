@@ -9,7 +9,7 @@ IMAGE_TAG?=latest
 JAVA_OPTS?=
 DOCKER_REPOSITORY?=ghcr.io/techlabfdj
 
-all: | build start 
+all: | build start
 
 build:
 	docker build -t ${DOCKER_REPOSITORY}/$(IMAGE_NAME):$(IMAGE_TAG) .
