@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'go-mem-block-reserver/**'
+      - '.gihub/workflows/go-mem-block-reserver.yml'
     branches: [ "main" ]
   pull_request:
     paths:
