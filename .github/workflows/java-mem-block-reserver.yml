@@ -67,7 +67,7 @@ jobs:
 
     - name: Copy jar to target repo
       run: |
-        cp ./target/${{env.IMAGE_NAME}}-j${{ matrix.Java }}:${{env.IMAGE_TAG}} ./${{env.TARGET_REPO_PATH}}
+        cp ./target/${{env.IMAGE_NAME}}-j${{ matrix.Java }}-${{env.IMAGE_TAG}}.jar ./${{env.TARGET_REPO_PATH}}
 
     - name: Push to target repo
       run: |
