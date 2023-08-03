@@ -48,7 +48,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			        <configuration>
 					<image>
-				        	<name>${dockerRepository}/${artifactID}:${artifactVersion}-j${javaVersion}</name>
+				        	<name>${dockerRepository}/${artifactID}-j${javaVersion}:${artifactVersion}</name>
 					</image>
 					<layers>
 	        	    			<enabled>true</enabled>
