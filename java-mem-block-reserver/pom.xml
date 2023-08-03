@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.github.techlabfdj.killercoda</groupId>
-	<artifactId>${artifactID}</artifactId>
+	<artifactId>${artifactID}-j${javaVersion}</artifactId>
 	<version>${artifactVersion}</version> 
 	<name>java-mem-block-reserver</name>
 	<description>Java tools to test memory limits</description>
@@ -71,11 +71,4 @@
 			</plugin>
 		</plugins>
 	</build>
-	<distributionManagement>
-		<repository>
-			<id>github</id>
-			<name>GitHub Packages</name>
-			<url>https://maven.pkg.github.com/techlabfdj/killercoda</url>
-		</repository>
-	</distributionManagement>
 </project>
