@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.github.techlabfdj.killercoda</groupId>
-	<artifactId>${artifactID}</artifactId>
+	<artifactId>${artifactID}-j${javaVersion}</artifactId>
 	<version>${artifactVersion}</version> 
 	<name>java-mem-block-reserver</name>
 	<description>Java tools to test memory limits</description>
@@ -48,7 +48,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			        <configuration>
 					<image>
-				        	<name>${dockerRepository}/${artifactID}:${artifactVersion}</name>
+				        	<name>${dockerRepository}/${artifactID}:${artifactVersion}-j${javaVersion}</name>
 					</image>
 					<layers>
 	        	    			<enabled>true</enabled>

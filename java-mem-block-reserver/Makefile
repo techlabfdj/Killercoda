@@ -13,7 +13,7 @@ JAVA_VERSION?=17
 all: | build start 
  
 build:
-	./mvnw package -Dmatrix.java=$(JAVA_VERSION) -DartifactID=$(IMAGE_NAME) -DartifactVersion=$(IMAGE_TAG) -DdockerRepository=${DOCKER_REPOSITORY} -Dspring-boot.build-image.publish=false
+	./mvnw package -DjavaVersion=$(JAVA_VERSION) -DartifactID=$(IMAGE_NAME) -DartifactVersion=$(IMAGE_TAG) -DdockerRepository=${DOCKER_REPOSITORY} -Dspring-boot.build-image.publish=false
 
 start:
 	@if docker container inspect $(CONTAINER_NAME) > /dev/null 2>&1; then docker container rm --force --volumes $(CONTAINER_NAME) > /dev/null && printf -- "%s | container was stopped/removed\n" "$$(date --rfc-3339=ns)"; fi
