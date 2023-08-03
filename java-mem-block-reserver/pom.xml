@@ -14,7 +14,7 @@
 	<name>java-mem-block-reserver</name>
 	<description>Java tools to test memory limits</description>
 	<properties>
-	    <java.version>17</java.version>
+	    <java.version>${matrix.Java}</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
