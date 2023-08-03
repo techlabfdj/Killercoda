@@ -48,24 +48,24 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			        <configuration>
 					<image>
-				        	<name>${dockerRepository}/${artifactID}-j${javaVersion}:${artifactVersion}</name>
+				        <name>${dockerRepository}/${artifactID}-j${javaVersion}:${artifactVersion}</name>
 					</image>
 					<layers>
-	        	    			<enabled>true</enabled>
+	        	    	<enabled>true</enabled>
 					</layers>
 			        </configuration>				
 				<executions>
 					<execution>
-							<id>docker-image-output</id>
-							<goals>
-									<goal>build-image</goal>
-							</goals>
+						<id>docker-image-output</id>
+						<goals>
+							<goal>build-image</goal>
+						</goals>
 					</execution>
 					<execution>
-							<id>jar-output</id>
-							<goals>
-									<goal>repackage</goal>
-							</goals>
+						<id>jar-output</id>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
 					</execution>
 				</executions>
 			</plugin>
