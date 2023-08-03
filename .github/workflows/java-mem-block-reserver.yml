@@ -24,7 +24,7 @@ jobs:
     
     strategy:
       matrix:
-        java: [ '8', '11', '17' ]
+        java: [ '17' ]
     
     name: Java ${{ matrix.Java }} sample
 
