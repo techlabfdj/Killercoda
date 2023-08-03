@@ -19,6 +19,7 @@ jobs:
       IMAGE_TAG: ${{ matrix.java }}-latest
       DOCKER_REPOSITORY: ghcr.io/techlabfdj
       TARGET_REPO: https://github.com/techlabfdj/killercoda-artifacts
+      TARGET_REPO_PATH: killercoda-artifacts
       
 
     runs-on: ubuntu-latest
@@ -57,20 +58,20 @@ jobs:
     - name: Checkout target repo
       uses: actions/checkout@v2
       with:
-        repository: ${{TARGET_REPO}}
+        repository: ${{env.TARGET_REPO}}
         username: ${{ github.actor }}
-        token: ${{ secrets.TARGET_REPO_TOKEN }}
-        path: 
+        token: ${{ secrets.GITHUB_TOKEN }}
+        path: ${{env.TARGET_REPO_PATH}}
 
     - name: Copy jar to target repo
       run: |
-        cp ./target/${{IMAGE_NAME}}${{IMAGE_TAG}} .
+        cp ./target/${{env.IMAGE_NAME}}${{env.IMAGE_TAG}} .
 
     - name: Push to target repo
       run: |
-        cd target-repo
+        cd ${{env.TARGET_REPO_PATH}}
         git config user.name "GitHub Action"
         git config user.email "action@github.com"
         git add .
-        git commit -m "Add binary file"
+        git commit -m "Add artifacts"
         git push
