@@ -19,13 +19,17 @@ jobs:
       IMAGE_TAG: latest
       DOCKER_REPOSITORY: ghcr.io/techlabfdj
 
+      SOURCE_FOLDER_NAME: go-mem-block-reserver
+      TARGET_REPO: techlabfdj/killercoda-artifacts
+      TARGET_REPO_PATH: killercoda-artifacts
+
     runs-on: ubuntu-latest
     
     steps:
     - uses: actions/checkout@v3
     
     - name: Set up Go
-      uses: actions/setup-go@v2
+      uses: actions/setup-go@v4
       with:
         go-version: '^1.20'
 
@@ -44,25 +48,35 @@ jobs:
       working-directory: go-mem-block-reserver
       run: docker push ${{ env.DOCKER_REPOSITORY }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
 
-  buildBinary:
-    name: build go-mem-block-reserver binary
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        goos: [linux]
-        goarch: [amd64]
+    - name: Install dependencies
+      run: go get .
 
-    steps:
-      - name: Check out code into the Go module directory
-        uses: actions/checkout@v3
+    - name: Build
+      run: go build -v ./...
 
-      - name: Setup go and release
-        uses: wangyoucao577/go-release-action@v1.34
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN  }}
-          goos: ${{ matrix.goos }}
-          goarch: ${{ matrix.goarch }}
-          project_path: "./go-mem-block-reserver"
-          binary_name: "go-mem-block-reserver"
-          release_name: draft
-          overwrite: true
+    - name: Test with the Go CLI
+      run: go test
+    
+    - name: Checkout target repo
+      uses: actions/checkout@v3
+      with:
+        repository: ${{env.TARGET_REPO}}
+        path: ${{env.TARGET_REPO_PATH}}
+        token: ${{ secrets.PAT_KILLERCODA_ARTIFACTS }}
+
+    - name: find 
+      run: |
+        find .
+  
+    - name: Copy binary to target repo
+      run: |
+        cp ./${{env.SOURCE_FOLDER_NAME}}/target/${{env.IMAGE_NAME}}-${{env.IMAGE_TAG}}.jar ./${{env.TARGET_REPO_PATH}}
+
+    - name: Push to target repo
+      run: |
+        cd ${{env.TARGET_REPO_PATH}}
+        git config user.name "GitHub Action"
+        git config user.email "action@github.com"
+        git add .
+        git commit -m "Add artifacts"
+        git push
