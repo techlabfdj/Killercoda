@@ -3,7 +3,7 @@
 
     <groupId>killercoda</groupId>
     <artifactId>containerizedProcess</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>latest</version>
     <packaging>jar</packaging>
 
     <name>containerized-process</name>
