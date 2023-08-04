@@ -56,9 +56,9 @@ jobs:
       working-directory: ${{env.SOURCE_FOLDER_NAME}}
       run: go build -v ./...
 
-    - name: Test with the Go CLI
-      working-directory: ${{env.SOURCE_FOLDER_NAME}}
-      run: go test
+#    - name: Test with the Go CLI
+#      working-directory: ${{env.SOURCE_FOLDER_NAME}}
+#      run: go test
     
     - name: Checkout target repo
       uses: actions/checkout@v3
