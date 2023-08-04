@@ -54,7 +54,7 @@ jobs:
 
     - name: Build
       working-directory: ${{env.SOURCE_FOLDER_NAME}}
-      run: go build -v ./...
+      run: go build -v ./... -o ${{env.IMAGE_NAME}}-${{env.IMAGE_TAG}}
 
 #    - name: Test with the Go CLI
 #      working-directory: ${{env.SOURCE_FOLDER_NAME}}
