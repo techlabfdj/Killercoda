@@ -1,4 +1,4 @@
-name: Java CI with Maven
+name: CI to push java-mem-block-reserver jar & container 
 
 on:
   push:

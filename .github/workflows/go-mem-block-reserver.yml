@@ -1,4 +1,4 @@
-name: CI to push go-mem-block-reserver container 
+name: CI to push go-mem-block-reserver binary & container 
 
 on:
   push:
