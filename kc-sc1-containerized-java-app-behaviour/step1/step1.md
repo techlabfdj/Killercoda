@@ -1,5 +1,5 @@
  
-#Introduction
+# Introduction
 
 The focus of this scenario is to test the behavior of a Java application on the same host but under different deployment strategies. 
 
@@ -10,10 +10,12 @@ This approach allows us to compare and contrast the behavior of the application 
 
 Additionnaly, we will also discuss about cpu limit during these different deployment contexts.
 
-#Material description
+# Material description
 
 On this host, you can find a jar file, a github repositor clone: killercode-artifacts.  
 This repository contains a jar file that we will use for test:   java-mem-block-reserver-j17-latest.jar  
 
-This jar contains  java application that launch a server on http://127.0.0.1:8080.
+This jar contains  java application that launch a server on http://127.0.0.1:8080  
 You could find a description about this application in this [Readme](https://github.com/techlabfdj/killercoda/blob/main/java-mem-block-reserver/README.md)
+
+Let's now get to the next step !
