@@ -73,7 +73,7 @@ jobs:
   
     - name: Copy binary to target repo
       run: |
-        cp ./${{env.SOURCE_FOLDER_NAME}}/${{env.IMAGE_NAME}}-${{env.IMAGE_TAG}} ./${{env.TARGET_REPO_PATH}}
+        cp ./${{env.SOURCE_FOLDER_NAME}}/${{env.IMAGE_NAME}}-${{env.IMAGE_TAG}} ./${{env.TARGET_REPO_PATH}}/sc2
 
     - name: Push to target repo
       run: |
