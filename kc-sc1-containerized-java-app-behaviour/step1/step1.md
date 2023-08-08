@@ -11,4 +11,4 @@ Let's get it :
 
 `docker pull ghcr.io/techlabfdj/go-mem-block-reserver:latest`{{exec}}  
 
-Let's now get to the next step !
+After the image has been successfully pulled, you can proceed to the next step!
