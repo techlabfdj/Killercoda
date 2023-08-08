@@ -21,7 +21,7 @@ JAVA_VERSION?=17
 start-c:
 	@if docker container inspect $(CONTAINER_NAME) > /dev/null 2>&1; then docker container rm --force --volumes $(CONTAINER_NAME) > /dev/null && printf -- "%s | container was stopped/removed\n" "$$(date --rfc-3339=ns)"; fi
 	@docker run -d --name "$(CONTAINER_NAME)" -p 127.0.0.1:8080:8080 $(START_OPTS) -eJAVA_OPTS="$(JAVA_OPTS)" ${DOCKER_REPOSITORY}/$(IMAGE_NAME):$(IMAGE_TAG) > /dev/null && printf -- "%s | container was started\n" "$$(date --rfc-3339=ns)"
-	@sleep .2; $(MAKE) status
+	@sleep .2; $(MAKE) status-c
 
 start-c-oomexit-disabled:
 	@JAVA_OPTS="$(JAVA_OPTS) -XX:-ExitOnOutOfMemoryError" $(MAKE) start
@@ -52,7 +52,7 @@ clean-c:
 #Makefile entries for jar
 start-j:
 	@$(JAVA_CMD) -jar $(JAR_PATH) $(JAVA_OPTS) > $$HOME/logfile.log 2>&1 &
-		@sleep .2; $(MAKE) status
+		@sleep 2; $(MAKE) status-j
 
 status-j:
 	@# Check if the Java application is running using the JAR name.
