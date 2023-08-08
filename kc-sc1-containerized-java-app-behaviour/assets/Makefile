@@ -41,7 +41,7 @@ exec-c:
 stop-c:
 	@if inspection=$$(docker container inspect $(CONTAINER_NAME) 2> /dev/null); then docker container stop $(STOP_OPTS) $(CONTAINER_NAME) > /dev/null && printf -- "%s | container was stopped\n" "$$(date --rfc-3339=ns)" || { printf -- "%s | container failed to stop\n" "$$(date --rfc-3339=ns)"; exit 1; }; else printf -- "%s | nothing to stop\n" "$$(date --rfc-3339=ns)"; fi
 
-logs_c:
+logs-c:
 	if docker container inspect $(CONTAINER_NAME) > /dev/null 2>&1; then docker logs $(LOGS_OPTS) $(CONTAINER_NAME); fi
 
 clean-c:
