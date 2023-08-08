@@ -4,11 +4,14 @@ on:
   push:
     paths:
       - 'java-mem-block-reserver/**'
+      - '!java-mem-block-reserver/**/*.md'
       - '.github/workflows/java-mem-block-reserver.yml'      
     branches: [ "main" ]
   pull_request:
     paths:
       - 'java-mem-block-reserver/**'
+      - '!java-mem-block-reserver/**/*.md'
+      - '.github/workflows/java-mem-block-reserver.yml'      
     branches: [ "main" ]
 
 jobs:
