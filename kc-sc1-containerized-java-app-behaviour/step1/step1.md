@@ -1,6 +1,6 @@
 # Material description
 
-In your home directory, you can find a folder `killercode-artifacts` which is a github repository clone.    
+In your home directory, you can find a folder `killercoda-artifacts` which is a github repository clone.    
 This folder contains a jar file that we will use for our test: `java-mem-block-reserver-j17-latest.jar`  
 
 This jar contains a java application that launch a server on http://127.0.0.1:8080
