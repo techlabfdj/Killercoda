@@ -51,43 +51,43 @@ clean-c:
 
 #Makefile entries for jar
 start-j:
-        @$(JAVA_CMD) -jar $(JAR_PATH) $(JAVA_OPTS) > $$HOME/logfile.log 2>&1 &
+	@$(JAVA_CMD) -jar $(JAR_PATH) $(JAVA_OPTS) > $$HOME/logfile.log 2>&1 &
 		@sleep .2; $(MAKE) status
 
 status-j:
-        @# Check if the Java application is running using the JAR name.
-        @if pgrep -f $(JAR_PATH) > /dev/null ; then \
-                echo "The Java application is running."; \
-                health=$$(curl --silent --fail http://127.0.0.1:8080/health) && { \
-                        printf -- "Application health status: %s\n" "$${health}"; \
-                } || { \
-                        echo "Unable to fetch the health status of the application."; \
-                }; \
-        else \
-                echo "The Java application is not running."; \
-        fi
+	@# Check if the Java application is running using the JAR name.
+	@if pgrep -f $(JAR_PATH) > /dev/null ; then \
+		echo "The Java application is running."; \
+		health=$$(curl --silent --fail http://127.0.0.1:8080/health) && { \
+			printf -- "Application health status: %s\n" "$${health}"; \
+		} || { \
+			echo "Unable to fetch the health status of the application."; \
+		}; \
+	else \
+		echo "The Java application is not running."; \
+	fi
 
 metrics-j:
-        @# Fetch metrics from the Java application via HTTP endpoints.
-        @for metric in system.cpu.count; do \
-                value=$$(curl --silent --fail "http://127.0.0.1:8080/metrics/$${metric}") && { \
-                        printf -- "$${value}" | jq -re '(.name | . + (20 - length) * " ") +" | "+(.measurements[] | select( .statistic == "VALUE" ) | .value | tostring | (. + (20 - length)*""))+ " | " +.baseUnit'; \
-                } | xargs -I {} printf "%s | %s\n" "$$(date --rfc-3339=ns)" "{}" || break; \
-        done
-        @for metric in "jvm.memory.used?tag=area:heap" "jvm.memory.max?tag=area:heap"; do \
-                value=$$(curl --silent --fail "http://127.0.0.1:8080/metrics/$${metric}") && { \
-                        printf -- "$${value}" | jq -re '(.name | . + (20 - length) * " ") +" | "+(.measurements[] | select( .statistic == "VALUE" ) | (.value / (1024 * 1024) ) | round | tostring ) + " | " +"M"+.baseUnit'; \
-                } | xargs -I {} printf "%s | %s\n" "$$(date --rfc-3339=ns)" "{}" || break; \
-        done
+	@# Fetch metrics from the Java application via HTTP endpoints.
+	@for metric in system.cpu.count; do \
+		value=$$(curl --silent --fail "http://127.0.0.1:8080/metrics/$${metric}") && { \
+			printf -- "$${value}" | jq -re '(.name | . + (20 - length) * " ") +" | "+(.measurements[] | select( .statistic == "VALUE" ) | .value | tostring | (. + (20 - length)*""))+ " | " +.baseUnit'; \
+		} | xargs -I {} printf "%s | %s\n" "$$(date --rfc-3339=ns)" "{}" || break; \
+	done
+	@for metric in "jvm.memory.used?tag=area:heap" "jvm.memory.max?tag=area:heap"; do \
+		value=$$(curl --silent --fail "http://127.0.0.1:8080/metrics/$${metric}") && { \
+			printf -- "$${value}" | jq -re '(.name | . + (20 - length) * " ") +" | "+(.measurements[] | select( .statistic == "VALUE" ) | (.value / (1024 * 1024) ) | round | tostring ) + " | " +"M"+.baseUnit'; \
+		} | xargs -I {} printf "%s | %s\n" "$$(date --rfc-3339=ns)" "{}" || break; \
+	done
 
 stop-j:
-        @# Using `pkill` to kill the Java process based on the JAR path.
-        @pkill -f $(JAR_PATH) && echo "The Java application has been stopped."
+	@# Using `pkill` to kill the Java process based on the JAR path.
+	@pkill -f $(JAR_PATH) && echo "The Java application has been stopped."
 
 logs-j:
-        @# Display logs for the Java application
-        @ cat $$HOME/logfile.log
+	@# Display logs for the Java application
+	@ cat $$HOME/logfile.log
 
 clean-j:
-        @# clean java log file
-        @rm -f $$HOME/logfile.log
+	@# clean java log file
+	@rm -f $$HOME/logfile.log
