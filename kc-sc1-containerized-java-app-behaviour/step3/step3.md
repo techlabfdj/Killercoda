@@ -1,28 +1,17 @@
-# Build a Docker File 
+# Reviewing System Configuration
 
-with our Docker file 
-```
-# syntax=docker/dockerfile:1
+Initially, it's beneficial to inspect the system's memory and CPU configuration.
 
-FROM eclipse-temurin:17-jdk-jammy
+To view memory details:
+free{{exec}}
 
-WORKDIR /app
+To gather CPU information:
+lscpu{{exec}}
 
-COPY .mvn/ .mvn
-COPY mvnw pom.xml ./
-RUN ./mvnw dependency:resolve
+You should observe that our system is equipped with 2048 MB of memory and a single CPU.
 
-COPY src ./src
+# Now, Examine the JVM Configuration
 
-CMD ["./mvnw", "spring-boot:run"]
-```
+make metrics-j{{exec}}
 
-we could run the following command
-
-```
-docker build --tag java-docker .
-```
-
-then, we could check our image 
-
-    docker images 
+You'll find that while the JVM recognizes 1 CPU, it's allocated a maximum heap size of just 480 MB.
