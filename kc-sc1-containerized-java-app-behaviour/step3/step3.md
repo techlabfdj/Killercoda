@@ -22,5 +22,13 @@ Start by familiarizing yourself with the documentation:  [Readme](https://github
 
 Using the Java application, we'll incrementally allocate larger memory blocks until we hit the JVM heap's threshold. This will help us understand its behavior under such conditions. After each request, we'll monitor the memory usage.
 
- 1 - Allocate a memory block:`curl -X POST -H "Content-Type: application/json" -d '{"size": 32, "unit": "MEGABYTES"}' http://localhost:8080/segments`{{exec}}
- 2 - Review the memory metrics:`make metrics-j`{{exec}}
+ 1. Allocate a memory block:`curl -X POST -H "Content-Type: application/json" -d '{"size": 32, "unit": "MEGABYTES"}' http://localhost:8080/segments`{{exec}}  
+ 2. Review the memory metrics:`make metrics-j`{{exec}}
+
+Continue the loop until you hit the Heap threshold. Once you approach this limit, you should encounter a 400 HTTP response code.  
+
+It's important to observe that the JVM doesn't terminate but remains operational. This resilience is a standard characteristic of Java applications.
+
+Ok, now let's stop the java application ang go to next step: `make stop-j`{{exec}}
+
+> 
