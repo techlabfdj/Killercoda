@@ -10,7 +10,7 @@ To start the service, simply run the application. By default, it will start a we
 
 The service exposes several HTTP endpoints:
 
-- `POST /segments`: Reserve a block of memory. The size and unit of the block are specified in the request body as JSON. For example: `{"size": 32, "unit": "megabytes"}`. The service will return a UUID that identifies the reserved block.
+- `POST /segments`: Reserve a block of memory. The size and unit of the block are specified in the request body as JSON. For example: `{"size": 32, "unit": "MEGABYTES"}`. The service will return a UUID that identifies the reserved block.
 
 - `GET /segments/{id}`: Get information about a reserved block of memory. Replace `{id}` with the UUID of the block.
 
@@ -31,7 +31,7 @@ Here are some examples of how to use the service with `curl`:
 Reserve a block of memory:
 
 ```bash
-curl -X POST -H "Content-Type: application/json" -d '{"size": 32, "unit": "megabytes"}' http://localhost:8080/segments
+curl -X POST -H "Content-Type: application/json" -d '{"size": 32, "unit": "MEGABYTES"}' http://localhost:8080/segments
 ```
 
 Get information about a reserved block of memory:
@@ -41,7 +41,7 @@ curl http://localhost:8080/segments/{id}
 
 Update the size of a reserved block of memory:
 ```bash
-curl -X PUT -H "Content-Type: application/json" -d '{"size": 64, "unit": "megabytes"}' http://localhost:8080/segments/{id}
+curl -X PUT -H "Content-Type: application/json" -d '{"size": 64, "unit": "MEGABYTES"}' http://localhost:8080/segments/{id}
 ```
 
 Release a reserved block of memory:
@@ -64,7 +64,7 @@ Get runtime and memory usage statistics:
 curl http://localhost:8080/stats
 ```
 
-=> Possible units are `bytes`, `kilobytes`, `megabytes` and `gigabytes`  
+=> Possible units are `BYTES`, `KILOBYTES`, `MEGABYTES` and `GIGABYTES`  
 => Replace {id} with the UUID of a reserved block of memory.  
 
 
