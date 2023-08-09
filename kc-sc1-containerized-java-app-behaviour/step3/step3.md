@@ -30,5 +30,3 @@ Continue the loop until you hit the Heap threshold. Once you approach this limit
 It's important to observe that the JVM doesn't terminate but remains operational. This resilience is a standard characteristic of Java applications.
 
 Ok, now let's stop the java application ang go to next step: `make stop-j`{{exec}}
-
-> 
