@@ -30,4 +30,8 @@ This command is used to clean up any resources or files related to the Java appl
 
 `make clean-j`
 
+# first step: launch  the jaav application 
+
+To initiate the test and proceed to the subsequent phase, start the Java application using the command `make start-j`{{exec}}.
+
 
