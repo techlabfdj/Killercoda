@@ -1,15 +1,40 @@
-# Run our image 
+# Second Test Phase
 
-    docker run -d --publish 8080:8080 java-docker
+In the next phase of our tests, we'll run the Java application inside a container. 
 
-we could check the process with a curl
 
-```bash
-curl --request GET \
---url http://localhost:8080/actuator/health \
---header 'content-type: application/json'
-```
+For ease of execution, we've set up a command in the Makefile.
 
-# Access the app
+# Containerized Java Application Management with Makefile
 
-[click here]({{TRAFFIC_HOST1_8080}})
+### start-c
+
+This command starts the Java application directly from the JAR file. It's the primary way to get the Java application up and running without using a container.
+
+`make start-c`
+### status-c
+
+After starting the application with start-j, you can use this command to check the status of the Java application. It verifies if the process is running and also checks the health endpoint at http://127.0.0.1:8080/health.
+
+`make status-c`
+### metrics-c
+
+This command fetches and displays metrics from the running Java application. It's useful for monitoring and understanding the performance and behavior of the application.
+
+`make metrics-c`
+### stop-c
+
+When you're done testing or if you need to halt the Java application for any reason, use this command. It will find the process associated with the Java application and terminate it.
+
+`make stop-c`
+### clean-c
+
+This command is used to clean up any resources or files related to the Java application. It's particularly useful to ensure a fresh environment before starting a new test or after completing tests.
+
+`make clean-c`
+
+# first step: launch the containerized java application 
+
+To initiate the test and proceed to the subsequent phase, start the containerized Java application using the command `make start-c`{{exec}}.
+
+
