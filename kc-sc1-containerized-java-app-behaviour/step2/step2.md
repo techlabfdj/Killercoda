@@ -1,4 +1,4 @@
-# Initial Test Phase
+# Step 2 - Initial Test Phase
 
 The first phase of our testing involves launching the Java application directly from the JAR file. To facilitate this, we've provided a Makefile command. 
 
@@ -30,7 +30,7 @@ This command is used to clean up any resources or files related to the Java appl
 
 `make clean-j`
 
-# first step: launch  the jaav application 
+# first step: launch  the java application 
 
 To initiate the test and proceed to the subsequent phase, start the Java application using the command `make start-j`{{exec}}.
 

@@ -1,4 +1,4 @@
-# Step 3 - Reviewing System Configuration
+# Step 5 - Reviewing System Configuration in a container context
 
 Initially, it's beneficial to inspect the system's memory and CPU configuration.
 
@@ -8,7 +8,10 @@ To view memory details:
 To gather CPU information:
 `lscpu`{{exec}}
 
-You should observe that our system is equipped with approximatively 2048 MB of memory and a single CPU.
+You should observe that our system is still equipped with approximatively 2048 MB of memory and a single CPU.
+
+Let's have a look, to the conatiner perspective :
+
 
 # Now, Examine the JVM Configuration
 

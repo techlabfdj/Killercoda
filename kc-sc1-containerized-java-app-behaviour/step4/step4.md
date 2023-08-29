@@ -1,6 +1,7 @@
-# Second Test Phase
+# Step 4 - Second Test Phase
 
-In the next phase of our tests, we'll run the Java application inside a container. 
+In the next phase of our tests, we'll run the Java application inside a container.
+We will use image that we previously download on step 1. 
 
 
 For ease of execution, we've set up a command in the Makefile.
