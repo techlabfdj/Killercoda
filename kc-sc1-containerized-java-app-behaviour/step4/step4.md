@@ -10,12 +10,12 @@ For ease of execution, we've set up a command in the Makefile.
 
 ### start-c
 
-This command starts the Java application directly from the JAR file. It's the primary way to get the Java application up and running without using a container.
+This command starts the Java application using container image downloaded. 
 
 `make start-c`
 ### status-c
 
-After starting the application with start-j, you can use this command to check the status of the Java application. It verifies if the process is running and also checks the health endpoint at http://127.0.0.1:8080/health.
+After starting the application with start-c, you can use this command to check the status of the Java application. It verifies if the process is running and also checks the health endpoint at http://127.0.0.1:8080/health.
 
 `make status-c`
 ### metrics-c
@@ -23,9 +23,14 @@ After starting the application with start-j, you can use this command to check t
 This command fetches and displays metrics from the running Java application. It's useful for monitoring and understanding the performance and behavior of the application.
 
 `make metrics-c`
+### exec-c
+
+The exec-c command in the Makefile launches a bash session inside the Docker container. It first checks if the container exists using docker container inspect before initiating the bash session with docker exec.
+
+`make exec-c`
 ### stop-c
 
-When you're done testing or if you need to halt the Java application for any reason, use this command. It will find the process associated with the Java application and terminate it.
+When you're done testing or if you need to halt the Java application for any reason, use this command. It will terminate the container.
 
 `make stop-c`
 ### clean-c
