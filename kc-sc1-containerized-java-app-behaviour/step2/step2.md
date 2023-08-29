@@ -13,22 +13,22 @@ This command starts the Java application directly from the JAR file. It's the pr
 
 After starting the application with start-j, you can use this command to check the status of the Java application. It verifies if the process is running and also checks the health endpoint at http://127.0.0.1:8080/health.
 
-`make status-j`
+`make status-j`{{exec}}  
 ### metrics-j
 
 This command fetches and displays metrics from the running Java application. It's useful for monitoring and understanding the performance and behavior of the application.
 
-`make metrics-j`
+`make metrics-j`{{exec}}  
 ### stop-j
 
 When you're done testing or if you need to halt the Java application for any reason, use this command. It will find the process associated with the Java application and terminate it.
 
-`make stop-j`
+`make stop-j`{{exec}}  
 ### clean-j
 
 This command is used to clean up any resources or files related to the Java application. It's particularly useful to ensure a fresh environment before starting a new test or after completing tests.
 
-`make clean-j`
+`make clean-j`{{exec}}  
 
 # first step: launch  the java application 
 
