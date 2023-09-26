@@ -9,8 +9,7 @@ For ease of execution, we've set up a command in the Makefile.
 # Containerized Java Application Management with Makefile
 
 ### start-c
-
-This command starts the Java application using container image downloaded. 
+This command starts the Java application using the container image downloaded previously. 
 
 `make start-c`{{exec}}  
 ### status-c
@@ -28,6 +27,8 @@ This command fetches and displays metrics from the running Java application. It'
 The exec-c command in the Makefile launches a bash session inside the Docker container. It first checks if the container exists using docker container inspect before initiating the bash session with docker exec.
 
 `make exec-c`{{exec}}  
+
+
 ### stop-c
 
 When you're done testing or if you need to halt the Java application for any reason, use this command. It will terminate the container.

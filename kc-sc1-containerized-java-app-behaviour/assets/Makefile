@@ -24,7 +24,7 @@ start-c:
 	@sleep 2; $(MAKE) status-c
 
 start-c-oomexit-disabled:
-	@JAVA_OPTS="$(JAVA_OPTS) -XX:-ExitOnOutOfMemoryError" $(MAKE) start
+	@JAVA_OPTS="$(JAVA_OPTS) -XX:-ExitOnOutOfMemoryError" $(MAKE) start-c
 
 status-c:
 	@inspection=$$(docker container inspect $(CONTAINER_NAME) 2> /dev/null) && docker container ps --all --filter "name=$(CONTAINER_NAME)" && { printf -- "$${inspection}" | jq -e '.[].State.Status == "running"' > /dev/null && printf -- "\n%s | container is running\n" "$$(date --rfc-3339=ns)" || { printf -- "\n%s | container isn't running\n" "$$(date --rfc-3339=ns)"; exit 1; } ; }
