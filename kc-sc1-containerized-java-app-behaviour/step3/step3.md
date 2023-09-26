@@ -2,9 +2,11 @@
 
 Initially, it's beneficial to inspect the system's memory and CPU configuration.
 
+## Memory details
+
 To view memory detail, you could use `free`{{exec}}  
 
-The Mem metric also includes several fields that give an overview of the system's memory usage, such as:  
+The Mem metric includes several fields that give an overview of the system's memory usage, such as:  
 
 1. Total: This is the total amount of physical RAM on your system.  
 
@@ -18,12 +20,21 @@ The Mem metric also includes several fields that give an overview of the system'
 
 6. Available: This shows an estimated value of how many memory resources are still open for use. This value can fluctuate as processes start and stop and memory is freed up and allocated. So, while it may not actively be used by a process at the moment, it is still available to be allocated to a process if needed.  
 
+ => extract from [how to use the linux free command](https://www.turing.com/kb/how-to-use-the-linux-free-command)
+
+## CPU details
+
 To gather CPU information:
 `lscpu`{{exec}}
 
-You should observe that our system is equipped with approximatively 2048 MB of memory and a single CPU.
+- CPU(s) represents the number of logical cores, which equals “Thread(s) per core” × “Core(s) per socket” × “Socket(s)”.   
+- One socket is one physical CPU package (which occupies one socket on the motherboard)
+- Each socket hosts a number of physical cores, and each core can run one or more threads
 
-# Now, Examine the JVM Configuration
+## Sum up of system informations
+Using these 2 tools, you should observe that our system is equipped with approximatively 2048 MB of memory and a single CPU.
+
+# Now, let's examine the JVM Configuration
 
 `make metrics-j`{{exec}}
 
