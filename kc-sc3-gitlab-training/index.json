@@ -1,0 +1,42 @@
+{
+  "title": "Gitlab training",
+  "description": "This scenario create a dockerised demo environment to play with GitLab CI.",
+  "details": {
+    "intro": {
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "title": "Build gitlab demo environment",
+        "text": "step1/step1.md",
+        "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Generate a gitlab runner",
+        "text": "step2/step2.md",
+        "verify": "step2/verify.sh"
+      },
+      {
+        "title": "Register a gitlab runner",
+        "text": "step3/step3.md",
+        "verify": "step3/verify.sh"
+      }
+      ,
+      {
+        "title": "Verify in gitlab interface",
+        "text": "step4/step4.md",
+        "verify": "step4/verify.sh"
+      }    ],
+    "assets": {
+      "host01": [
+        {"file": "docker-compose.yaml", "target": "~/"},
+        {"file": "*.png", "target": "~/img/"}
+    ]},
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu-4GB"
+  }
+}

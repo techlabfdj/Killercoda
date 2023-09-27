@@ -1,0 +1,1 @@
+That's it your demo environment is ready, you can start playing with Gitlab.

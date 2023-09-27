@@ -1,0 +1,82 @@
+# Version of the docker compose for compatibility with the docker engine.
+version: '3.7'
+
+# List of our services
+services:
+    # The GitLab instance
+    gitlab:
+        # Use the official GitLab docker image
+        image: gitlab/gitlab-ce
+
+        # We rename the container name thus Docker bind the
+        # `gitlab.local` name to the IP address of the container
+        container_name: gitlab.local
+        hostname: gitlab.local
+
+        # In the same way VM can be in a network, we can place containers
+        # in a network.
+        networks:
+            - gitlab-network
+
+        # Environment variables
+        environment:
+            # gitlab.rb configuration
+            GITLAB_OMNIBUS_CONFIG: |
+              external_url 'http://gitlab.local'
+        
+        # Volumes mounted to the container
+        volumes:
+            # The gitlab config
+            - ./gitlab/config:/etc/gitlab
+            # Logs
+            - ./gitlab/logs:/var/log/gitlab
+            # Database with all the repositories
+            - ./gitlab/data:/var/opt/gitlab
+        
+        # Exposed port
+        ports:
+            # SSH
+            - 22:22
+            # HTTP & HTTPS
+            - 80:80
+            - 443:443
+    
+    # The GitLab Runner that will execute pipelines and jobs.
+    gitlab-runner:
+        # Official Runner image based on ubunutu
+        image: gitlab/gitlab-runner:ubuntu
+
+        # Can't run without the gitlab service
+        depends_on:
+            - gitlab
+        
+        # GitLab and the Runner are in the same network.
+        container_name: runner.gitlab.local
+        networks:
+            - gitlab-network
+        
+        environment:
+            # Environment variables.
+            - TZ="Europe/Paris"
+
+        # Volumes mounted to the container
+        volumes:
+            # Mount the Runner config so we can edit it if needed.
+            - ./gitlab-runner/config:/etc/gitlab-runner
+
+            # GitLab Runner need to access the docker socket to run docker images
+            # along the GitLab.
+            - /var/run/docker.sock:/var/run/docker.sock
+        links:
+            - "gitlab:gitlab"
+
+# The networks configuration
+networks:
+    # The gitlab-network for our services
+    gitlab-network:
+        name: gitlab-network
+        # Default configuration
+        
+        
+
+

@@ -4,7 +4,7 @@ Initially, it's beneficial to inspect the system's memory and CPU configuration.
 
 ## Memory details
 
-To view memory detail, you could use `free`{{exec}}  
+To view memory detail, you could use the command `free`{{exec}}  
 
 The Mem metric includes several fields that give an overview of the system's memory usage, such as:  
 
@@ -24,17 +24,23 @@ The Mem metric includes several fields that give an overview of the system's mem
 
 ## CPU details
 
-To gather CPU information:
-`lscpu`{{exec}}
+To gather CPU information you could use the command `lscpu`{{exec}}
 
 - CPU(s) represents the number of logical cores, which equals “Thread(s) per core” × “Core(s) per socket” × “Socket(s)”.   
 - One socket is one physical CPU package (which occupies one socket on the motherboard)
 - Each socket hosts a number of physical cores, and each core can run one or more threads
 
 ## Sum up of system informations
-Using these 2 tools, you should observe that our system is equipped with approximatively 2048 MB of memory and a single CPU.
+
+Using these 2 tools, you should observe that our system is equipped with: 
+- approximatively 2048 MB of memory 
+- a single CPU.
 
 # Now, let's examine the JVM Configuration
+
+We have seen details about memory and cpu configuration on our host.
+Keep in mind that these details could be differents from the JVM perspective.
+we could restrict memory and cpu usage 
 
 `make metrics-j`{{exec}}
 
