@@ -21,12 +21,7 @@
         "text": "step3/step3.md",
         "verify": "step3/verify.sh"
       }
-      ,
-      {
-        "title": "Verify in gitlab interface",
-        "text": "step4/step4.md",
-        "verify": "step4/verify.sh"
-      }    ],
+      ],
     "assets": {
       "host01": [
         {"file": "docker-compose.yaml", "target": "~/"},
