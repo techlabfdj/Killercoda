@@ -1,0 +1,1 @@
+That's it, you can now start playing with Golang.

@@ -1,0 +1,22 @@
+{
+  "title": "Golang training",
+  "description": "In this scenario we will see how to install golang and dev our first golang project.",
+  "details": {
+    "intro": {
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "title": "Install golang",
+        "text": "step1/step1.md",
+        "verify": "step1/verify.sh"
+      }
+      ],
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}
