@@ -19,8 +19,8 @@ Retrieve initial root password : `cat /etc/gitlab/initial_root_password`{{exec}}
 
 ## Let's play with gitlab
 - Go to {{TRAFFIC_HOST1_80}}
-![](./img/register-root.png)
-- Connect to the `root` user using the previously regtrieved password.
+
+- Connect to the `root` user using the previously retrieved password.
 ![Scan results](../img/login-root.png)
 
 - Create a new `Project` using the `New Project` button.
