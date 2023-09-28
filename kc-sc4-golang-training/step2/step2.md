@@ -89,7 +89,7 @@ For example, edit the `hello.go` file and change the `"Hello World !"` (English)
 
 Then, run `go run hello.go`, and see what happens:
 
-![hola-mundo](./images/hola-mundo.png)
+![Scan results](./images/hola-mundo.png)
 
 This will compile and execute the source file immediately. You don't need to compile it first, which is handy during the development process.
 
