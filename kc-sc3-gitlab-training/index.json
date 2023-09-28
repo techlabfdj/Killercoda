@@ -24,14 +24,13 @@
       ],
     "assets": {
       "host01": [
-        {"file": "docker-compose.yaml", "target": "~/"},
-        {"file": "*.png", "target": "~/img/"}
+        {"file": "docker-compose.yaml", "target": "~/"}
     ]},
     "finish": {
       "text": "finish.md"
     }
   },
   "backend": {
-    "imageid": "ubuntu-4GB"
+    "imageid": "ubuntu"
   }
 }
