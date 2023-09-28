@@ -12,20 +12,28 @@ Thus, we must register our runner:
 We have to use the web interface to finalize the GitLab setup and then **get a registration token** for our runner. 
 Follow the following steps:  
 
+## Get the `root` GitLab password.
 
+Open a shell on the gitlab container: `docker exec -it gitlab.local bash`{{exec}}
+Retrieve initial root password : `cat /etc/gitlab/initial_root_password`{{exec}}
+
+## Let's play with gitlab
 - Go to {{TRAFFIC_HOST1_80}}
-- Set the `root` GitLab password.
 ![](./img/register-root.png)
-- Connect to the `root` user using the previously registered password.
-![Scan results](./img/login-root.png)
+- Connect to the `root` user using the previously regtrieved password.
+![Scan results](../img/login-root.png)
+
 - Create a new `Project` using the `New Project` button.
-![Scan results](./img/home-page.png)
-![Scan results](./img/new-repo.png)
+![Scan results](../img/home-page.png)
+![Scan results](../img/new-repo.png)
+
 - Go to `Settings`/`CI / CD` in your `Project`.
-![Scan results](./img/repo-page-hover-settings-ci-cd.png)
+![Scan results](../img/repo-page-hover-settings-ci-cd.png)
+
 - Expand the runner section.
-![Scan results](./img/repo-settings-ci-cd-runners-page.png)
+![Scan results](../img/repo-settings-ci-cd-runners-page.png)
+
 - Copy the registration token.
-![Scan results](./img/repo-settings-ci-cd-runners-page-token.png)
+![Scan results](../img/repo-settings-ci-cd-runners-page-token.png)
 
 
