@@ -43,7 +43,7 @@ $ sudo docker exec -it runner.gitlab.local gitlab-runner register --non-interact
 # Finally, if you need to install dependencies for your shell executor:
 $ sudo docker exec -it runner.gitlab.local bash
 ```
-```
+
 > **NOTE**: If you are going to use a **Shell** executor, I recommend you to install `sudo` to login as `gitlab-runner` user. 
 > Thus, you can install your dependencies for the `gitlab-runner` user.
 
