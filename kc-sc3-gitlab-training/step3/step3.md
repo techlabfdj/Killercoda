@@ -50,5 +50,5 @@ $ sudo docker exec -it runner.gitlab.local bash
 
 If the command return no error, we should see a new `config.toml` file in `gitlab-runner/config` (next to your `docker-compose.yaml` file). 
 Thus, we should see our runners in the runner section of the `Settings`/`CI / CD` page of our `project`/`group`:
-![](./img/repo-settings-ci-cd-runners-page-2.png)
+![Scan results](../img/repo-settings-ci-cd-runners-page-2.png)
 

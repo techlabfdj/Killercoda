@@ -1,10 +1,9 @@
 # configure a gitlab runner
 
-You should see a lot of logs and the following error from the runner:  
+Using `docker logs gitlab.local`{{exec}}, you should see a lot of logs and the following error from the runner:  
 ```shell
 runner.gitlab.local | ERROR: Failed to load config stat /etc/gitlab-runner/config.toml: no such file or directory  builds=0
 ```
-
 
 The configuration of our Runner is missing, we need to **connect** it to the GitLab server to generate a new one. 
 Thus, we must register our runner:  
@@ -14,8 +13,8 @@ Follow the following steps:
 
 ## Get the `root` GitLab password.
 
-Open a shell on the gitlab container: `docker exec -it gitlab.local bash`{{exec}}
-Retrieve initial root password : `cat /etc/gitlab/initial_root_password`{{exec}}
+Open a shell on the gitlab container: `docker exec -it gitlab.local bash`{{exec}}  
+In this shell, retrieve initial root password : `cat /etc/gitlab/initial_root_password`{{exec}}  
 
 ## Let's play with gitlab
 - Go to {{TRAFFIC_HOST1_80}}
