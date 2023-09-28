@@ -6,6 +6,8 @@ The environment is made of :
 - a GitLab Runner
 For more information about the environment, read the comments of `docker-compose.yaml`.
 
-To starts our containers, you must be in the directory containing the **docker-compose.yaml** (in your HOME) and run the following :  
+To starts our containers, you must be in the directory containing the **docker-compose.yaml** (in your HOME) and run the following command:  
 `docker-compose up -d`{{exec}}
+
+After executing this command, you can proceed to the next step by clicking the 'Check' button.
 
