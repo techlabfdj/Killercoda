@@ -13,19 +13,19 @@ We have to use the web interface to finalize the GitLab setup and then **get a r
 Follow the following steps:  
 
 
-- Go to http://localhost/ .
+- Go to {{TRAFFIC_HOST1_80}}
 - Set the `root` GitLab password.
-![gitlab register root page](./img/register-root.png)
+![](./img/register-root.png)
 - Connect to the `root` user using the previously registered password.
-![gitlab login page](./img/login-root.png)
+![Scan results](./img/login-root.png)
 - Create a new `Project` using the `New Project` button.
-![gitlab home page](./img/home-page.png)
-![gitlab home page](./img/new-repo.png)
+![Scan results](./img/home-page.png)
+![Scan results](./img/new-repo.png)
 - Go to `Settings`/`CI / CD` in your `Project`.
-![gitlab repo page](./img/repo-page-hover-settings-ci-cd.png)
+![Scan results](./img/repo-page-hover-settings-ci-cd.png)
 - Expand the runner section.
-![gitlab repo ci/cd settings](./img/repo-settings-ci-cd-runners-page.png)
+![Scan results](./img/repo-settings-ci-cd-runners-page.png)
 - Copy the registration token.
-![gitlab repo ci/cd settings](./img/repo-settings-ci-cd-runners-page-token.png)
+![Scan results](./img/repo-settings-ci-cd-runners-page-token.png)
 
 
