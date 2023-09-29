@@ -10,6 +10,11 @@
         "title": "Install golang",
         "text": "step1/step1.md",
         "verify": "step1/verify.sh"
+      },
+      {
+        "title": "Hella world",
+        "text": "step2/step2.md",
+        "verify": "step2/verify.sh"
       }
       ],
     "finish": {
