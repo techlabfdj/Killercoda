@@ -32,7 +32,7 @@ You may also install a few other binaries to run `gcc` commands for building Go 
 
 ```shell
 sudo apt install build-essential
-```
+```{{exec}}
 
 # Check your installation:
 
