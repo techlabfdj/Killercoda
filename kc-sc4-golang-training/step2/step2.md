@@ -4,28 +4,24 @@ In this tutorial, you will create your first Go program, the famous and wonderfu
 
 ## Initialization
 
-First, let's create a go/src and a go/bin directory: `mkdir -p $HOME/go/src $HOME/go/bin`{{exec}}
+First, let's create a go/src and a go/bin directory:   
+`mkdir -p $HOME/go/src $HOME/go/bin`{{exec}}
 
 In your editor go to the `src` you created: `cd $HOME/go/src`{{exec}}
 
 Create a directory named `hello-world` inside, and go into this directory:
 
-```bash
-mkdir hello-world
-cd hello-world
-```
+`mkdir hello-world && cd hello-world`{{exec}}
 
 ## First module
 
 Now, you will create your first go module, using `go mod` function:
 
-```bash
-go mod init training/basics/hello-world
-```
+`go mod init training/basics/hello-world`{{exec}}
 
 Let's explore what this command have done. You can use `ls` and `cat` to show the file content:
 
-![go-mod](./images/go-mod.png)
+![Scan results](./images/go-mod.png)
 
 `go mod` has created a new file, named `go.mod`. This is Go module. It contains the module name we passed in (`"training/basics/hello-world"`), and aditionnal information about Go version (Go `1.17` is used in our example).
 
@@ -35,7 +31,8 @@ Good, but for now, this module contains no code.
 
 Create a file named `hello.go`, and put this initial content:
 
-```go
+```
+go
 package main
 
 import "fmt"
@@ -43,7 +40,7 @@ import "fmt"
 func main() {
     fmt.Println("Hello World !")
 }
-```
+```{{copy}}
 
 Congratulations, your fist Go file is created ! This is were this tutorial ends.
 
@@ -61,7 +58,7 @@ For this, we need to run the `go install` command, along with our module name:
 go install training/basics/hello-world
 ```
 
-![go-install](./images/go-install.png)
+![Scan results](./images/go-install.png)
 
 In case of error, the error message is shown in the terminal. But if this command is successful (which should be), it will print nothing.
 
@@ -69,7 +66,7 @@ In case of error, the error message is shown in the terminal. But if this comman
 
 The Go compiler has kicked in, compiled your source file into a binary file, and stored it inside `$GOPATH/bin` directory:
 
-![ls-gopath-bin](./images/ls-gopath-bin.png)
+![Scan results](./images/ls-gopath-bin.png)
 
 ## Run time !
 
@@ -77,7 +74,7 @@ If you have correctly set up your `$PATH` variable during installation steps, yo
 
 If you don't trust me, you can control that the program you ran is the one located under `$GOPATH/bin` directory too:
 
-![hello-world-run](./images/hello-world-run.png)
+![Scan results](./images/hello-world-run.png)
 
 > Amazing ! But now, when I change the `hello.go` file, I have to re-run the freaking long `go install` command every time ?
 
