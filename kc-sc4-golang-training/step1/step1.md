@@ -35,14 +35,6 @@ wget --quiet https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz -O /tmp/go
 && rm -f /tmp/go${GO_VERSION}.linux-amd64.tar.gz
 ```{{exec}}
 
-Now open a terminal/console window and check your go installation `go version && go env`{{exec}}.
-
-You may also install a few other binaries to run `gcc` commands for building Go apps:
-
-```shell
-sudo apt install build-essential
-```{{exec}}
-
 # Check your installation:
 
 `go version`{{exec}}  
