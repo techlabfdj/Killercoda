@@ -1,10 +1,16 @@
 
 # Installing golang
 
+## Remove previous version
 Ensure previous installation is removed.
 
 `sudo apt-get remove -y golang-g`{{exec}}
 
+## Initialization
+First, let's create a go/src and a go/bin directory:   
+`mkdir -p $HOME/go/src $HOME/go/bin`{{exec}}
+
+## Installation
 Choose the right installation version and corresponding checksum from [golang web site](https://golang.org/dl/).
 
 ```
