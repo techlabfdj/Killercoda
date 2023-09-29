@@ -17,7 +17,7 @@ Choose the right installation version and corresponding checksum from [golang we
 GO_VERSION=1.21.0
 GO_CHECKSUM=d0398903a16ba2232b389fb31032ddf57cac34efda306a0eebac34f0965a0742
 export GOPATH=$HOME/go
-export GOROOT=$HOME/go/go
+export GOROOT=$HOME/go
 export PATH=$PATH:$GOPATH/bin:$GOROOT/bin
 ```{{exec}}
 
