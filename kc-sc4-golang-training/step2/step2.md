@@ -23,16 +23,16 @@ Let's explore what this command have done. You can use `ls` and `cat` to show th
 
 ![Scan results](./images/go-mod.png)
 
-`go mod` has created a new file, named `go.mod`. This is Go module. It contains the module name we passed in (`"training/basics/hello-world"`), and aditionnal information about Go version (Go `1.17` is used in our example).
+`go mod` has created a new file, named `go.mod`. This is Go module. It contains the module name we passed in (`"training/basics/hello-world"`), and aditionnal information about Go version (Go `1.21` is used in our example).
 
 Good, but for now, this module contains no code.
 
 ## Main source file
 
-Create a file named `hello.go`, and put this initial content:
+In the theia editor, go to folder `go/src/heelo-world` and create a file named `hello.go`.  
+Put this initial content:  
 
 ```
-go
 package main
 
 import "fmt"
@@ -56,7 +56,7 @@ For this, we need to run the `go install` command, along with our module name:
 
 ```bash
 go install training/basics/hello-world
-```
+```{{exec}}
 
 ![Scan results](./images/go-install.png)
 
