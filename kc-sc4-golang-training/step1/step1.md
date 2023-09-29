@@ -3,12 +3,14 @@
 
 Ensure previous installation is removed.
 
-    sudo apt-get remove -y golang-go
+`sudo apt-get remove -y golang-g`{{exec}}
 
 Choose the right installation version and corresponding checksum from [golang web site](https://golang.org/dl/).
 
-    GO_VERSION=1.21.0
-    GO_CHECKSUM=d0398903a16ba2232b389fb31032ddf57cac34efda306a0eebac34f0965a0742
+```
+GO_VERSION=1.21.0
+GO_CHECKSUM=d0398903a16ba2232b389fb31032ddf57cac34efda306a0eebac34f0965a0742
+```{{exec}}
 
 Then run the installation
 
@@ -24,7 +26,7 @@ wget --quiet https://golang.org/dl/go${GO_VERSION}.linux-amd64.tar.gz -O /tmp/go
 && rm -f /tmp/go${GO_VERSION}.linux-amd64.tar.gz
 ```{{exec}}
 
-Now open a terminal/console window and check your go installation `go version && go env`.
+Now open a terminal/console window and check your go installation `go version && go env`{{exec}}.
 
 You may also install a few other binaries to run `gcc` commands for building Go apps:
 
@@ -32,14 +34,13 @@ You may also install a few other binaries to run `gcc` commands for building Go 
 sudo apt install build-essential
 ```
 
-Check your installation:
+# Check your installation:
 
-```shell
-go version
-# should display "go version go1.21.0 linux/amd64"
+`go version`{{exec}}  
+ It should display "go version go1.21.0 linux/amd64"  
 
-go env
-# should display a list of environment variables, most of them named like. "GO*"
-```
+`go env`{{exec}}  
+It should display a list of environment variables, most of them named like. "GO*"  
+
 
 Let's now Create your first Go program (click on Next)
