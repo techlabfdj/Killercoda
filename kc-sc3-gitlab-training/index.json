@@ -24,7 +24,8 @@
       ],
     "assets": {
       "host01": [
-        {"file": "docker-compose.yaml", "target": "~/"}
+        {"file": "docker-compose.yaml", "target": "~/"},
+        {"file": "verify*", "target": "~/"}
     ]},
     "finish": {
       "text": "finish.md"
