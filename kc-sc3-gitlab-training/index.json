@@ -9,7 +9,7 @@
       {
         "title": "Build gitlab demo environment",
         "text": "step1/step1.md",
-        "verify": "step1/verify.sh"
+        "verify": "step1/verify_step1.sh"
       },
       {
         "title": "Generate a gitlab runner",
