@@ -10,4 +10,5 @@ To starts our containers, you must be in the directory containing the `docker-co
 `docker-compose up -d`{{exec}}
 
 After this command has finished, you can move on to the next step by clicking the 'Check' button.
+The check button uses a clone of the script verify_step1.sh to check that you successfully start our test environment.
 

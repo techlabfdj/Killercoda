@@ -13,13 +13,12 @@
       },
       {
         "title": "Generate a gitlab runner",
-        "text": "step2/step2.md",
-        "verify": "step2/verify.sh"
+        "text": "step2/step2.md"
       },
       {
         "title": "Register a gitlab runner",
         "text": "step3/step3.md",
-        "verify": "step3/verify.sh"
+        "verify": "assets/verify_step3.sh"
       }
       ],
     "assets": {

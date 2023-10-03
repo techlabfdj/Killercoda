@@ -52,3 +52,8 @@ If the command return no error, we should see a new `config.toml` file in `gitla
 Thus, we should see our runners in the runner section of the `Settings`/`CI / CD` page of our `project`/`group`:
 ![Scan results](../img/repo-settings-ci-cd-runners-page-2.png)
 
+# Next
+You can move on to the next step by clicking the 'Check' button.
+The check button uses a clone of the script verify_step3.sh to check that you successfully start our test environment.
+
+

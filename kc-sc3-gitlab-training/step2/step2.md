@@ -35,4 +35,6 @@ In this shell, retrieve initial root password : `cat /etc/gitlab/initial_root_pa
 - Copy the registration token.
 ![Scan results](../img/repo-settings-ci-cd-runners-page-token.png)
 
-
+# Next
+You can move on to the next step by clicking the 'Check' button.
+The check button uses a clone of the script verify_step2.sh to check that you successfully
