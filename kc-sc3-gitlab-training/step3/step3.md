@@ -6,7 +6,7 @@ Now, we can go back to our shell and **register** our runner:
 $ sudo docker exec -it runner.gitlab.local gitlab-runner register --non-interactive \
 	--name demo-runner \
 	--url http://gitlab.local \
-	--registration-token <your_registration_token> \
+	--registration-token $RUNNER_TOKEN \
 	--tag-list docker \
 	--executor docker \
 	--docker-image docker \
