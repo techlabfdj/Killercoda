@@ -22,8 +22,12 @@ In this shell, retrieve initial root password : `cat /etc/gitlab/initial_root_pa
 - Connect to the `root` user using the previously retrieved password.
 ![Scan results](../img/login-root.png)
 
-- Create a new `Project` using the `New Project` button.
+- Create a new `Project` using the `Create a Project` button.
 ![Scan results](../img/home-page.png)
+
+- Create a blank `Project` using the `Create blank Project` button.
+![Scan results](../img/create_project.png)
+
 ![Scan results](../img/new-repo.png)
 
 - Go to `Settings`/`CI / CD` in your `Project`.
@@ -32,8 +36,12 @@ In this shell, retrieve initial root password : `cat /etc/gitlab/initial_root_pa
 - Expand the runner section.
 ![Scan results](../img/repo-settings-ci-cd-runners-page.png)
 
-- Copy the registration token.
-![Scan results](../img/repo-settings-ci-cd-runners-page-token.png)
+- Create a new project Runner using `New project runner` button (use `shared` as tag value for example)
+![Scan results](../img/new_project_runner.png)
+
+- copy the `runner token` displayed on the screen
+![Scan results](../img/runner_token.png)
+
 
 # Next
 You can move on to the next step by clicking the 'Check' button.
