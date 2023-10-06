@@ -54,6 +54,7 @@ Thus, we should see our runners in the runner section of the `Settings`/`CI / CD
 
 # Next
 You can move on to the next step by clicking the 'Check' button.
-The check button uses a clone of the script verify_step3.sh to check that you successfully start our test environment.
+The check button uses a clone of the script `verify_step3.sh` to check that the file `config.toml` exists, and thus, if your have successfully register a new gitlab runner.
+
 
 
