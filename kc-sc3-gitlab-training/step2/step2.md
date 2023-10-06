@@ -1,13 +1,6 @@
 # configure a gitlab runner
 
-Using `docker logs gitlab.local`{{exec}}, you should see a lot of logs and the following error from the runner:  
-```shell
-runner.gitlab.local | ERROR: Failed to load config stat /etc/gitlab-runner/config.toml: no such file or directory  builds=0
-```
-
-The configuration of our Runner is missing, we need to **connect** it to the GitLab server to generate a new one. 
-Thus, we must register our runner:  
-
+We should now register a gitlab runner.  
 We have to use the web interface to finalize the GitLab setup and then **get a registration token** for our runner. 
 Follow the following steps:  
 
@@ -42,7 +35,9 @@ In this shell, retrieve initial root password : `cat /etc/gitlab/initial_root_pa
 - copy the `runner token` displayed on the screen
 ![Scan results](../img/runner_token.png)
 
+- create an envt variable with this token 
+`export RUNNER_TOKEN=xxxxxx`` where xxxxx the token value
 
 # Next
-You can move on to the next step by clicking the 'Check' button.
-The check button uses a clone of the script verify_step2.sh to check that you successfully
+Once this variable defined, you can move on to the next step by clicking the 'Check' button.
+The check button uses a clone of the script `verify_step2.sh` (that you could find in your HOME) to check that you successfully set the RUNNER_TOKEN variable
