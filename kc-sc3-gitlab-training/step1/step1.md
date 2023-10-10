@@ -16,6 +16,11 @@ We can generate URLs in bash scripts by using file /etc/killercoda/host, for exa
 `sed 's/PORT/80/g' /etc/killercoda/host`{{exec}} will generate a link for URL on port 80 on the host/VM where this is executed.  
 
 Ok so let's replace gitlab external url with the killercoda specific one in the docker compose file.  
+In `docker-compose.yaml` we define '#EXTERNAL_URL' as a placeholder for the killercode URL.  
+`grep EXTERNAL_URL ./docker-compose.yaml`{{exec}}  
+
+Let's update it :  
+
 ``` 
 EXTERNAL_URL=$(sed 's/PORT/80/g' /etc/killercoda/host)
 sed "s|#EXTERNAL_URL|$EXTERNAL_URL|" -i ./docker-compose.yaml
