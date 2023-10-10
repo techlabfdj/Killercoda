@@ -27,7 +27,7 @@ sed "s|#EXTERNAL_URL|$EXTERNAL_URL|" -i ./docker-compose.yaml
 ```{{exec}}
 
 You could check with a grep the the variable has been updated:  
-`grep external ./docker-compose.yaml`.  
+`grep external ./docker-compose.yaml`{{exec}}.  
 
 ## start the gitlab container
 
