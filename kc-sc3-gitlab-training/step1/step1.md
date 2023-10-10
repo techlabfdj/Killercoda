@@ -9,9 +9,9 @@ For more information about the environment, read the comments of the `docker-com
 
 ## Set gitlab external url
 
-First we will change the external URL to use for gitlab access.   
-Killercoda use some specific URL to access a service with HTTP on a defined port.  
-We can generate URLs in bash scripts by using file /etc/killercoda/host, for example :  
+First, we need to modify the external URL for accessing GitLab.  
+Killercoda utilizes specific URLs to access a service via HTTP on a designated port.  
+URLs can be generated within bash scripts using the file located at /etc/killercoda/host, as shown in the following example:
 
 `sed 's/PORT/80/g' /etc/killercoda/host`{{exec}} will generate a link for URL on port 80 on the host/VM where this is executed.  
 
@@ -31,10 +31,9 @@ You could check with a grep the the variable has been updated:
 
 ## start the gitlab container
 
-To starts our containers, you must be in the directory containing the `docker-compose.yaml` (in your HOME) and run the following command:  
+To start our containers, we must be in the directory containing the `docker-compose.yaml` (in your HOME) and run the following command:  
 
 `docker-compose up -d`{{exec}}
 
-After this command has finished, you can move on to the next step by clicking the 'Check' button.  
-
-The check button uses a clone of the `script verify_step1.sh` (that you could fin din your HOME) to check that you successfully start our test environment.
+After the command completes, proceed by clicking the 'Check' button.  
+This button triggers a clone of the script verify_step1.sh (located in your HOME directory) to verify the successful initialization of our test environment.
