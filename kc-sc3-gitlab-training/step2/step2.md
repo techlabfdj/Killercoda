@@ -38,8 +38,9 @@ In this shell, retrieve initial root password : `cat /etc/gitlab/initial_root_pa
 - copy the `runner token` displayed on the screen
 ![Scan results](../img/runner_token.png)
 
-- get back to a terminal and create an envt variable with this token 
-`export RUNNER_TOKEN=xxxxxx`` where xxxxx the token value
+- get back to a terminal, create a file  
+`vi ~/RUNNER_TOKEN`{{exec}}  
+and insert the token value in the file.
 
 # Next
 Once this variable defined, you can move on to the next step by clicking the 'Check' button.  

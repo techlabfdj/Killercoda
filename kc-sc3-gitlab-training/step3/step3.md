@@ -3,15 +3,15 @@
 Now, we can go back to our shell and **register** our runner:
 
 ```shell
-$ sudo docker exec -it runner.gitlab.local gitlab-runner register --non-interactive \
-	--name demo-runner \
-	--url http://gitlab.local \
-	--registration-token $RUNNER_TOKEN \
-	--tag-list docker \
-	--executor docker \
-	--docker-image docker \
-	--docker-network-mode gitlab-network \
-	--docker-volumes "/var/run/docker.sock:/var/run/docker.sock"
+sudo docker exec -it runner.gitlab.local gitlab-runner register --non-interactive \
+    --name demo-runner \
+    --url http://gitlab.local \
+    --registration-token $(cat TOKEN_RUNNER) \
+    --tag-list docker \
+    --executor docker \
+    --docker-image docker \
+    --docker-network-mode gitlab-network \
+    --docker-volumes "/var/run/docker.sock:/var/run/docker.sock"
 
 # --registraton-token: The preiously copied token (you must use the same token for every registration).
 # --tag-list: a comma separated list of tag. Useful to assign a job to an executor.
