@@ -1,10 +1,16 @@
 #!/bin/bash
 
-# Check if the environment variable RUNNER_TOKEN is defined and not empty
-if [ -n "$RUNNER_TOKEN" ]; then
-    echo "The environment variable RUNNER_TOKEN is defined and not empty."
-    exit 0 # Success, return 0
+# Check if the file exists
+if [ -e "RUNNER_TOKEN" ]; then
+    # Check if the file is not empty
+    if [ -s "RUNNER_TOKEN" ]; then
+        echo "File RUNNER_TOKEN exists and is not empty."
+        exit 0  # Return 0 for success
+    else
+        echo "File RUNNER_TOKEN exists but is empty."
+        exit 1  # Return 1 for failure
+    fi
 else
-    echo "The environment variable RUNNER_TOKEN is not defined or is empty."
-    exit 1 # Failure, return 1
+    echo "File RUNNER_TOKEN does not exist."
+    exit 1  # Return 1 for failure
 fi
