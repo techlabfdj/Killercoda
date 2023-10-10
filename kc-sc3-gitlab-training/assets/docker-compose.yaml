@@ -22,7 +22,7 @@ services:
         environment:
             # gitlab.rb configuration
             GITLAB_OMNIBUS_CONFIG: |
-              external_url 'http://gitlab.local'
+              external_url '#EXTERNAL_URL'
         
         # Volumes mounted to the container
         volumes:
