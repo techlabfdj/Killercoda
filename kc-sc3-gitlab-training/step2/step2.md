@@ -7,7 +7,8 @@ Follow the following steps:
 ## Get the `root` GitLab password.
 
 Open a shell on the gitlab container: `docker exec -it gitlab.local bash`{{exec}}  
-In this shell, retrieve initial root password : `cat /etc/gitlab/initial_root_password`{{exec}}  
+In this shell, retrieve initial root password : `cat /etc/gitlab/initial_root_password && exit`{{exec}}  
+
 
 ## Let's play with gitlab UI
 - Go to {{TRAFFIC_HOST1_80}}
