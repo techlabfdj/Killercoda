@@ -1,46 +1,20 @@
-# Hello World !
+## Tour of go
 
-In this tutorial, you will create your first Go program, the famous and wonderful **Hello World** application.
+Want to learn go, start with the Go Tour available on https://go.dev/tour/.
 
-## Initialization
-
-In your editor go to the **src** directory you created: `cd $HOME/go/src`{{exec}}
-
-Create a sub-directory named `hello-world`, and go into this directory:
-
-`mkdir hello-world && cd hello-world`{{exec}}
-
-## First module
-
-Now, you will create your first go module, using **go mod** function:
-
-`go mod init training/basics/hello-world`{{exec}}
-
-Let's explore what this command have done. You can use **ls** and **cat** to show the file content:
-
-![Scan results](./images/go-mod.png)
-
-**go mod command** has created a new file, named **go.mod**. This is Go module. It contains the module name we passed in (**"training/basics/hello-world"**), and aditionnal information about Go version (Go **1.21** is used in our example).
-
-Good, but for now, this module contains no code.
-
-## Main source file
-
-In the theia editor, go to folder **go/src/hello-world** and create a file named **hello.go**.  
-Put this initial content:  
+You may also install it and use it locally:
 
 ```
-package main
+go install golang.org/x/website/tour@latest
+```{{exec}}
 
-import "fmt"
+This will place a `tour` binary in your `GOPATH`'s `bin` directory which should already be in your `PATH`.
 
-func main() {
-    fmt.Println("Hello World !")
-}
-```{{copy}}
+The tour program can be run offline with the following command:
 
-Congratulations, your fist Go file is created ! This is were this tutorial ends.
+```
+tour
+```{{exec}}
 
-> But wait ! How do I run this program ?
+When running the `tour` program, it will open a web browser displaying your local version of the tour.
 
-Good question padawan, let's explore this together by clicking on the "Next" button.

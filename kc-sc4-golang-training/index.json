@@ -12,14 +12,19 @@
         "verify": "step1/verify.sh"
       },
       {
-        "title": "Hello world",
+        "title": "Tour of go",
         "text": "step2/step2.md",
         "verify": "step2/verify.sh"
       },
       {
-        "title": "Compile",
+        "title": "Hello world",
         "text": "step3/step3.md",
         "verify": "step3/verify.sh"
+      },
+      {
+        "title": "Compile",
+        "text": "step4/step4.md",
+        "verify": "step4/verify.sh"
       }      ],
     "finish": {
       "text": "finish.md"
