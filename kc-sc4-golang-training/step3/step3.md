@@ -6,7 +6,7 @@ In this tutorial, you will create your first Go program, the famous and wonderfu
 
 In your editor go to the **src** directory you created, create a sub-directory named `hello-world`, and go into this directory:
 
-````{{exec}}
+```
 cd $HOME/go/src
 mkdir hello-world && cd hello-world
 ```{{exec}}
