@@ -43,4 +43,4 @@ Congratulations, your fist Go file is created ! This is were this tutorial ends.
 
 > But wait ! How do I run this program ?
 
-Good question padawan, let's explore this together by clicking on the "Next" button.
+Good question padawan, let's explore this together by clicking on the "Check" button.
