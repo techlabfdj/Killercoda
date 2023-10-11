@@ -1,6 +1,6 @@
 ## Tour of Go
 
-If you're eager to learn Go, initiate your journey with the Go Tour, an exceptional resource available online: https://go.dev/tour/.
+To begin learning Go,  initiate your journey with the Go Tour, an exceptional resource available online: https://go.dev/tour/.
 
 For those who prefer an offline experience, there’s also an option to install and utilize the Go Tour locally:
 
