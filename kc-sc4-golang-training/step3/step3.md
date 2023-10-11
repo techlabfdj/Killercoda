@@ -18,7 +18,7 @@ Now, you will create your first go module, using **go mod** function:
 
 Let's explore what this command have done. You can use **ls** and **cat** to show the file content:
 
-![Scan results](./images/go-mod.png)
+![Scan results](./images/go.mod.png)
 
 **go mod command** has created a new file, named **go.mod**. This is Go module. It contains the module name we passed in (**"training/basics/hello-world"**), and aditionnal information about Go version (Go **1.21** is used in our example).
 
@@ -38,6 +38,8 @@ func main() {
     fmt.Println("Hello World !")
 }
 ```{{copy}}
+
+![Scan results](./images/hello.go.png)
 
 Congratulations, your fist Go file is created ! This is were this tutorial ends.
 
