@@ -4,11 +4,12 @@ In this tutorial, you will create your first Go program, the famous and wonderfu
 
 ## Initialization
 
-In your editor go to the **src** directory you created: `cd $HOME/go/src`{{exec}}
+In your editor go to the **src** directory you created, create a sub-directory named `hello-world`, and go into this directory:
 
-Create a sub-directory named `hello-world`, and go into this directory:
-
-`mkdir hello-world && cd hello-world`{{exec}}
+````{{exec}}
+cd $HOME/go/src
+mkdir hello-world && cd hello-world
+```{{exec}}
 
 ## First module
 
