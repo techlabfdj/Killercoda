@@ -8,9 +8,8 @@ Welcome to the initial phase of our Golang adventure! In this section, we  guide
 ## Remove previous version
 Ensure previous installation is removed.
 
-```rm -rf /usr/local/go
- sudo apt-get remove -y golang-g```{{exec}}
-
+`rm -rf /usr/local/go`{{exec}}
+ 
 ## Initialization
 First, let's create a go/src and a go/bin directory:   
 `mkdir -p $HOME/go/src $HOME/go/bin`{{exec}}
