@@ -6,7 +6,7 @@ Commencing the Golang Installation Journey!
 Welcome to the initial phase of our Golang adventure! In this section, we  guide you through the process of installing Golang on your system. We'll guide you through each step, from removing old installations to setting up necessary directories and installing your selected Go version. By the end of this segment, you’ll have a functional Golang setup ready for crafting your very first Go program. Let's dive in!
 
 ## Remove previous version
-Ensure previous installation is removed.
+Ensure previous installation is removed.  
 
 `rm -rf /usr/local/go`{{exec}}
  
@@ -15,7 +15,7 @@ First, let's create a go/src and a go/bin directory:
 `mkdir -p $HOME/go/src $HOME/go/bin`{{exec}}
 
 ## Installation
-Choose the right installation version and corresponding checksum from [golang web site](https://golang.org/dl/).
+Choose the right installation version and corresponding checksum from [golang web site](https://golang.org/dl/).  
 
 ```
 GO_VERSION=1.21.0
