@@ -20,8 +20,8 @@ func main() {
 }
 ```{{}}
 
-Create a new file `environment.go`{{}}` with this content.  
-`cp hello.go environment.go`{{exec}}  
+Create a new file `environment.go`{{}} with this content.  
+`cp ../hello-world/hello.go environment.go`{{exec}}  
 
 In this example, let's say you want detect the user language, and display a custom message based on this value:
 
