@@ -34,7 +34,7 @@ If you don't trust me, you can control that the program you ran is the one locat
 
 Yes. And no. I mean... It depends !
 
-If you want to try the code, you can use the `go run`{{exec}} command.
+If you want to try the code, you can use the **go run** command.
 
 For example, edit the **hello.go** file and change the `"Hello World !"` (English) string to `"Hola Mundo !"` (Spanish).
 
@@ -55,7 +55,6 @@ or
 `go install .`{{exec}}  
 or  
 `go install`{{exec}}  
-
 
 For convenience, go commands accept paths relative to the working directory, and default to the package in the current working directory if no other path is given.
 
