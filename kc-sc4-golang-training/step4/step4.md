@@ -16,7 +16,7 @@ In case of error, the error message is shown in the terminal. But if this comman
 
 The Go compiler has kicked in, compiled your source file into a binary file, and stored it inside **$GOPATH/bin** directory:  
 
-`ls $GOPAH/bin`{{exec}}  
+`ls $GOPATH/bin`{{exec}}  
 
 ![Scan results](./images/ls-gopath-bin.png)
 
