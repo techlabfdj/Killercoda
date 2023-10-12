@@ -24,7 +24,20 @@
         "title": "Compile",
         "text": "step4/step4.md",
         "verify": "step4/verify.sh"
-      }      ],
+      },
+      {
+        "title": "Environment variables",
+        "text": "step5/step5.md"
+      },
+      {
+        "title": "Command line arguments",
+        "text": "step6/step6.md"
+      },
+      {
+        "title": "A Web Service based on GIN framework",
+        "text": "step7/step7.md"
+      }            
+    ],
     "finish": {
       "text": "finish.md"
     }
