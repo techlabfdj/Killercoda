@@ -13,7 +13,7 @@ go build &&
 
 Web server will start on :8080 and exposes a /datas path.
 
-### `GET /datas?offset=x&limit=y`
+### `GET /datas?offset=x&limit=y`{{}}
 
 * offset defaults to 0 and cannot be negative
 * limit defaults to 10 and cannot be negative or exceed 20
@@ -25,7 +25,7 @@ Web server will start on :8080 and exposes a /datas path.
 
 *Example:*
 
-* HTTP request sent `GET /datas?limit=2`
+* HTTP request sent `GET /datas?limit=2`{{}}
 * JSON response with 200 (OK) HTTP status code
 
   ```json
@@ -56,7 +56,7 @@ Web server will start on :8080 and exposes a /datas path.
 *Curl command line example :*  
 `curl http://127.0.0.1:8080/datas?limit=2`{{exec}}
 
-### `POST /datas`
+### `POST /datas`{{}}
 
 * accepts application/json content
 * will store (in-memory) the data and assign it an id (uuidv4)
@@ -89,7 +89,7 @@ Web server will start on :8080 and exposes a /datas path.
 *Curl command line example :*  
 `curl -d '{"aaa": "bbb","ccc": "ddd"}' -H "Content-Type: application/json" -X POST http://127.0.0.1:8080/datas`{{exec}}
 
-### `GET /datas/:id`
+### `GET /datas/:id`{{}}
 
 * id must be a uuidv4
 * returns 404 if id is not a valid data reference or the requested data
@@ -98,14 +98,14 @@ Web server will start on :8080 and exposes a /datas path.
 *Curl command line example :*  
 `curl http://127.0.0.1:8080/datas/dcfffde8-ad11-4b89-a779-8ea30772d854`{{}}
 
-### `PUT /datas/:id`
+### `PUT /datas/:id`{{}}
 
 * id must be a uuidv4
 * updated data shall be sent in request body as a JSON object
 * returns 404 if id is not a valid data reference or the requested data
 * returns 200 with newly recorded data in the system
 
-*Example for `POST /datas/b8984156-5767-48db-b6ae-833016cdbbc1`:*
+*Example for `POST /datas/b8984156-5767-48db-b6ae-833016cdbbc1`{{}}:*
 
 * JSON data sent in request body
 
@@ -128,9 +128,9 @@ Web server will start on :8080 and exposes a /datas path.
   ```{{}}
 
 *Curl command line example :*  
-`curl -d '{"aaa": "bbb","ccc": "eee"}' -H "Content-Type: application/json" -X PUT http://127.0.0.1:8080/datas/b8984156-5767-48db-b6ae-833016cdbbc1`{{}}
+`curl -d '{"aaa": "bbb","ccc": "eee"}' -H "Content-Type: application/json" -X PUT http://127.0.0.1:8080/datas/b8984156-5767-48db-b6ae-833016cdbbc1`{{exec}}
 
-### `DELETE /datas/:id`
+### `DELETE /datas/:id`{{}}
 
 * id must be a uuidv4
 * returns 404 if id is not a valid data reference or the requested data
@@ -138,11 +138,11 @@ Web server will start on :8080 and exposes a /datas path.
 
 *Example:*
 
-* HTTP request sent `DELETE /datas/b8984156-5767-48db-b6ae-833016cdbbc1`
+* HTTP request sent `DELETE /datas/b8984156-5767-48db-b6ae-833016cdbbc1`{{}}
 * no JSON content returned wih 204 (NO CONTENT) HTTP status code
 
 *Curl command line example :*  
-`curl -X DELETE http://127.0.0.1:8080/datas/b8984156-5767-48db-b6ae-833016cdbbc1`{{}}
+`curl -X DELETE http://127.0.0.1:8080/datas/b8984156-5767-48db-b6ae-833016cdbbc1`{{exec}}
 
 
 
