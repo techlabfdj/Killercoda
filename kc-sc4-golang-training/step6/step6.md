@@ -23,15 +23,13 @@ First, you need to declare a variable to host the value. In our case, the name i
 
 ```go
 var username string
-```{{}}
+```
 
 > This `var`{{}} statement can be placed inside or outside the `main`{{}} function, it's up to your preference. If the declaration is inside the function, the variable will be available only inside this function. In the other case, the variable will be available in all files from the same `package`{{}}.
 
 Then, you can use the [`flag.StringVar function`](https://pkg.go.dev/flag#StringVar) to tell the module your are expecting a command line argument:
 
-```go
-flag.Stringvar(&username, "firstname", "", "tell us what is your first name")
-```
+`flag.Stringvar(&username, "firstname", "", "tell us what is your first name")`
 
 You pass the argument name to read (`"firstname"`{{}} here), a default value (`""`{{}}) and an usage message (more details on this message later).
 
@@ -92,6 +90,7 @@ if len(username) == 0 {
 If you haven't managed to get it right, don't worry! You'll find the solution provided below.  
 <details>
 <summary>Full code</summary>
+
     ```go
     package main
 
