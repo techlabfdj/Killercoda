@@ -54,7 +54,7 @@ Web server will start on :8080 and exposes a /datas path.
   ```{{}}
 
 *Curl command line example :*  
-`curl {{TRAFFIC_HOST1_8080}}/datas?limit=2`{{exec}}
+`curl http://127.0.0.1:8080/datas?limit=2`{{exec}}
 
 ### `POST /datas`
 
@@ -87,7 +87,7 @@ Web server will start on :8080 and exposes a /datas path.
   ```{{}}
 
 *Curl command line example :*  
-`curl -d '{"aaa": "bbb","ccc": "ddd"}' -H "Content-Type: application/json" -X POST {{TRAFFIC_HOST1_8080}}/datas`{{exec}}
+`curl -d '{"aaa": "bbb","ccc": "ddd"}' -H "Content-Type: application/json" -X POST http://127.0.0.1:8080/datas`{{exec}}
 
 ### `GET /datas/:id`
 
@@ -96,7 +96,7 @@ Web server will start on :8080 and exposes a /datas path.
 * returns 200 with data
 
 *Curl command line example :*  
-`curl {{TRAFFIC_HOST1_8080}}/datas/dcfffde8-ad11-4b89-a779-8ea30772d854`{{}}
+`curl http://127.0.0.1:8080/datas/dcfffde8-ad11-4b89-a779-8ea30772d854`{{}}
 
 ### `PUT /datas/:id`
 
@@ -128,7 +128,7 @@ Web server will start on :8080 and exposes a /datas path.
   ```{{}}
 
 *Curl command line example :*  
-`curl -d '{"aaa": "bbb","ccc": "eee"}' -H "Content-Type: application/json" -X PUT {{TRAFFIC_HOST1_8080}}/datas/b8984156-5767-48db-b6ae-833016cdbbc1`{{}}
+`curl -d '{"aaa": "bbb","ccc": "eee"}' -H "Content-Type: application/json" -X PUT http://127.0.0.1:8080/datas/b8984156-5767-48db-b6ae-833016cdbbc1`{{}}
 
 ### `DELETE /datas/:id`
 
@@ -142,7 +142,7 @@ Web server will start on :8080 and exposes a /datas path.
 * no JSON content returned wih 204 (NO CONTENT) HTTP status code
 
 *Curl command line example :*  
-`curl -X DELETE {{TRAFFIC_HOST1_8080}}/datas/b8984156-5767-48db-b6ae-833016cdbbc1`{{}}
+`curl -X DELETE http://127.0.0.1:8080/datas/b8984156-5767-48db-b6ae-833016cdbbc1`{{}}
 
 
 
