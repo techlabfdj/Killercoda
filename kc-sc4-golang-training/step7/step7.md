@@ -1,6 +1,13 @@
 # A sample Web Service based on GIN framework
 
+
+## Introduction
+
+In the directory ~/datas, you'll discover a comprehensive project that leverages the GIN framework to implement a web server specifically designed for data handling. Please note that this project is provided solely for educational purposes.
+
 ## Installation
+
+To start the server on port 8080 and proceed with testing, execute the following command:  
 
 ```shell
 cd ~/datas &&
@@ -8,6 +15,10 @@ mkdir logs &&
 go build &&
 ./datas
 ```{{exec}}
+
+> This command compiles and runs the project, booting up the server for you to test. Since this server runs continuously and doesn't return to the command prompt, you'll need to open a new terminal for subsequent testing."
+
+
 
 ## Using it
 
@@ -96,7 +107,7 @@ Web server will start on :8080 and exposes a /datas path.
 * returns 200 with data
 
 *Curl command line example :*  
-`curl http://127.0.0.1:8080/datas/dcfffde8-ad11-4b89-a779-8ea30772d854`{{}}
+`curl http://127.0.0.1:8080/datas/dcfffde8-ad11-4b89-a779-8ea30772d854`{{exec}}
 
 ### `PUT /datas/:id`{{}}
 
