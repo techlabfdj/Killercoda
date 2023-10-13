@@ -4,6 +4,7 @@
 
 ```shell
 cd ~/datas &&
+mkdir logs &&
 go build &&
 ./datas
 ```{{exec}}
