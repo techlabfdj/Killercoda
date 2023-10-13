@@ -137,7 +137,7 @@ For example, let's ask the user a few (GDPR-compliant) informations:
 
 ```bash
 go run order-pizza.go --firstname Romain --size large --delivery-time 19h45m --cheese-variant-count 3 --with-tomatoes=false
-```{{}}
+```
 
 Here is an extract code on how to read such kind of arguments types:
 
