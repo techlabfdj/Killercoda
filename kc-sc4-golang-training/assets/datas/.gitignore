@@ -1,0 +1,4 @@
+logs/*_log*
+*_log*
+datas*
+__debug_bin

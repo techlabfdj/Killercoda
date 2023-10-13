@@ -38,6 +38,10 @@
         "text": "step7/step7.md"
       }            
     ],
+    "assets": {
+      "host01": [
+        {"file": "datas/**/*.*", "target": "/datas"}
+    ]},
     "finish": {
       "text": "finish.md"
     }
