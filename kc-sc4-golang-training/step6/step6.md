@@ -31,7 +31,7 @@ Then, you can use the [`flag.StringVar function`](https://pkg.go.dev/flag#String
 
 ```go
 flag.Stringvar(&username, "firstname", "", "tell us what is your first name")
-```{{}}
+```
 
 You pass the argument name to read (`"firstname"`{{}} here), a default value (`""`{{}}) and an usage message (more details on this message later).
 
@@ -43,7 +43,7 @@ Next, you can print the value using your variable:
 
 ```go
 fmt.Printf("Hello %v !\n", username)
-```{{}}
+```
 
 And try the program:
 
@@ -89,31 +89,33 @@ if len(username) == 0 {
 }
 ```{{}}
 
-Here is the whole code so far:
+If you haven't managed to get it right, don't worry! You'll find the solution provided below.  
+<details>
+<summary>Full code</summary>
+    ```go
+    package main
 
-```go
-package main
+    import (
+            "flag"
+            "fmt"
+            "os"
+    )
 
-import (
-        "flag"
-        "fmt"
-        "os"
-)
+    func main() {
+            var username string
+            flag.StringVar(&username, "firstname", "", "tell us what is your name")
 
-func main() {
-        var username string
-        flag.StringVar(&username, "firstname", "", "tell us what is your name")
+            flag.Parse()
 
-        flag.Parse()
+            if len(username) == 0 {
+                    fmt.Println("firstname argument is required")
+                    os.Exit(1)
+            }
 
-        if len(username) == 0 {
-                fmt.Println("firstname argument is required")
-                os.Exit(1)
-        }
-
-        fmt.Printf("Hello %v !\n", username)
-}
-```
+            fmt.Printf("Hello %v !\n", username)
+    }
+    ```
+</details>
 
 ## CLI Syntax
 
@@ -170,8 +172,6 @@ flag.DurationVar(&deliveryTime, "delivery-time", defaultDeliveryTime, "At what t
 ```
 
 You can also use the `flag.Var`{{}} method to convert the argument value into any Go type you want. In our example, we convert the `--size`{{}} argument into an enum-like value, with only a limited list of values allowed for this argument.
-
-As an example, the whole code of the amazing Pizza Order program is avalaible inside the [order-pizza.go file](./order-pizza.go) in this directory.
 
 ## Usage
 
