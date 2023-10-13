@@ -197,6 +197,7 @@ index 7b89e7e..af018bc 100644
 Let's try this code once again, using a loop for simplicity:
 
 ```bash
+clear
 for lang in es en-GB en-US fr invalid-value ; do
     echo "Trying code with language set to '${lang}'"
     language=${lang} go run environment.go
@@ -259,12 +260,12 @@ index af018bc..8cc696c 100644
 
 Output:
 
-```bash
-language=es go run environment.go
+`language=es go run environment.go`{{exec}}
+
+```
 # You have choosen 'es' lang.
 # Hola Mundo !
-```{{exec}}
+```{{}}
 
-You can review our final code in the [environment.go file](./environment.go) present in this directory.
 
 OK, that's enougth for environement variables, next step will be about command-line arguments.

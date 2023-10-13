@@ -1,9 +1,8 @@
 
-Training material for [GOLANG](http://golang.org)
 
 # **Welcome to the Golang Training Session!**
 
-In this training, we will embark on a journey through the world of Golang (Go), a robust programming language renowned for its efficiency and concurrency. 
+In this training, we will embark on a journey through the world of [GOLANG](http://golang.org) (Go), a robust programming language renowned for its efficiency and concurrency. 
 
 ## **What Will We Cover?**
 1. **Setting Up Golang:**

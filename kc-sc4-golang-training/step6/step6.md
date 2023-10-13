@@ -8,9 +8,12 @@ cd $HOME/go/src/command-line
 go mod init training/basics/command-line
 ```{{exec}}
 
-We are starting this tutorial with an empty file and we don't reuse the code from [the previous tutorial](../02-environment-variable/README.md).
+We are starting this tutorial with an empty file and we don't reuse the code from the previous step.
 
-> From now on, we will use `main.go` as our main program file, our unique entrypoint. So create a new file named `main.go`.
+> From now on, we will use `main.go` as our main program file, our unique entrypoint. So create a new file named `main.go` in your command-line directory.
+
+`echo -e "package main\n\nimport (\n\t\"fmt\"\n\t\"os\"\n)\n\nfunc main() {\n}" > main.go`{{exec}}
+
 
 To read command line argument, the native [flag package](https://pkg.go.dev/flag) can help.
 
