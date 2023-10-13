@@ -146,3 +146,9 @@ Web server will start on :8080 and exposes a /datas path.
 
 *Curl command line example :*  
 `curl -X DELETE http://localhost:8080/datas/b8984156-5767-48db-b6ae-833016cdbbc1`{{}}
+
+
+
+# The End
+
+Well, that's a wrap on our Golang rollercoaster ride! 🎢 Remember, this is just the tip of the Go iceberg. There's a vast ocean of possibilities waiting for you to explore. Dive in, get curious, and have fun coding! See you in the Go-sphere! 🚀

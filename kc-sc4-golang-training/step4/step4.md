@@ -5,6 +5,7 @@ Go is a compiled language, so we can't run this source file directly: we need to
 For this, we need to run the `go install`{{}} command, along with our module name:
 
 ```bash
+ls
 go install training/basics/hello-world
 ```{{exec}}
 
@@ -22,7 +23,7 @@ The Go compiler has kicked in, compiled your source file into a binary file, and
 
 # Run time !
 
-If you have correctly set up your `$PATH` variable during installation steps, you should be able to run your amazing program using `hello-world`{{exec}} command.
+If you have correctly set up your `$PATH`{{}} variable during installation steps, you should be able to run your amazing program using `hello-world`{{exec}} command.
 
 If you don't trust me, you can control that the program you ran is the one located under `$GOPATH/bin` directory too:  
 
@@ -36,7 +37,7 @@ Yes. And no. I mean... It depends !
 
 If you want to try the code, you can use the **go run** command.
 
-For example, edit the `hello.go`{{}} file and change the `"Hello World !"` (English) string to `"Hola Mundo !"` (Spanish).
+For example, edit the `hello.go`{{}} file and change the `"Hello World !"`{{}} (English) string to `"Hola Mundo !"` (Spanish).
 
 Then, run `go run hello.go`{{exec}}, and see what happens:
 
@@ -69,3 +70,6 @@ So a typical dev process would be:
 1. `go install`{{}} to compile and make it available globally on the system
 
 That's all folks ! 
+
+If you want to go further, in the next step, we will see how to read environment variables.  
+Let's click on Next !

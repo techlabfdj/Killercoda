@@ -12,4 +12,4 @@ Executing this command will install a 'tour' binary in your GOPATH's bin directo
 
 The tour command will open a web browser, displaying a local version of the Go Tour for a seamless learning experience.
 
-However, please note that **running the tour command locally will not be possible through the 'killercoda' environment**. The instruction provided for local installation serves as an example and a reference for those who might want to install the Go Tour on their personal systems outside of the 'killercoda' environment. 
+> However, please note that **running the tour command locally will not be possible through the 'killercoda' environment**. The instruction provided for local installation serves as an example and a reference for those who might want to install the Go Tour on their personal systems outside of the 'killercoda' environment. 

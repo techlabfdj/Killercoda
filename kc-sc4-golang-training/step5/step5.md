@@ -99,25 +99,25 @@ index 344c792..d4bdc18 100644
 You can try to run this code with various values for the `language` variable and look at the output:
 
 `language=es go run environment.go`{{exec}}
-# should log "Hola Mundo !"
+should log "Hola Mundo !"
 
 `language=en-GB go run environment.go`{{exec}}
-# should log "Hello World !"
+should log "Hello World !"
 
 `language=en-US go run environment.go`{{exec}}
-# should log "Hello World !" again
+should log "Hello World !" again
 
 `language=invalid go run environment.go`{{exec}}
-# should log nothing
+should log nothing
 
 
 You can try to run the code with no environment variable, or with an empty value:
 
 `go run environment.go`{{exec}}
-# should log nothing
+should log nothing
 
 `language= go run environment.go`{{exec}}`
-# should log nothing
+should log nothing
 
 
 There is another function, `os.LookupEnv`, which returns an additional boolean if the variable is present. Let's use this:

@@ -179,3 +179,7 @@ As seen above, you can specify an usage string for each flag. This usage message
     * if you specify a value with the wrong type (ex: `go run main.go --int-option="string-value"`{{exec}})
     * if you specify a value with an unparseable value (ex: `go run main.go --duration-option="in one hour"`{{exec}})
 - to print the manual of the program, using the `-help`{{}} default flag: `go run main.go -help`{{exec}}
+
+Ok, Great !
+What about adding some difficulty by learning how to implement a Go Web Server.  
+Let's click on Next.
