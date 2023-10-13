@@ -142,32 +142,71 @@ go run order-pizza.go --firstname Romain --size large --delivery-time 19h45m --c
 Here is an extract code on how to read such kind of arguments types:
 
 ```go
-// read string value (same as above)
-var username string
-flag.StringVar(&username, "firstname", "", "who order the pizza ?")
+package main
 
-// read an int value
-// try to run the program without "--cheese-variant-count" arg and see what happens
-// try to run the program with "--cheese-variant-count=6" or "-cheese-variant-count 6"
-var cheeseVariants int
-flag.IntVar(&cheeseVariants, "cheese-variant-count", 2, "how many flavours of cheese do you want?")
+import (
+	"flag"
+	"fmt"
+	"time"
+)
 
-// read a boolean value
-// without "--with-tomatoes", the default value is true
-// please note: for bool argument, the equal sign (=) is MANDATORY
-// try to run "--with-tomatoes=false" and "--with-tomatoes false" and see what happens
-// in the second case:
-//   - the false value is not read
-//   - all arguments after the "false" keyword are NOT read
-var withTomatoes bool
-flag.BoolVar(&withTomatoes, "with-tomatoes", true, "do you want tomatoes on your pizza ?")
+type PizzaSize int
 
-// read a Duration value
-// Duration must have a specific format to be correclty parsed
-// try with "--delivery-time 20h10m" and with ""--delivery-time 20h10" and see what happens
-var deliveryTime time.Duration
-defaultDeliveryTime, _ := time.ParseDuration("19h30m")
-flag.DurationVar(&deliveryTime, "delivery-time", defaultDeliveryTime, "At what time do you want us to deliver your pizza ?")
+const (
+	Small PizzaSize = iota
+	Medium
+	Large
+)
+
+var sizes = map[PizzaSize]string{
+	Small:  "small",
+	Medium: "medium",
+	Large:  "large",
+}
+
+func (p *PizzaSize) Set(value string) error {
+	for k, v := range sizes {
+		if v == value {
+			*p = k
+			return nil
+		}
+	}
+	return fmt.Errorf("invalid size: %v", value)
+}
+
+func (p *PizzaSize) String() string {
+	return sizes[*p]
+}
+
+func main() {
+	var username string
+	flag.StringVar(&username, "firstname", "", "who ordered the pizza?")
+
+	var cheeseVariants int
+	flag.IntVar(&cheeseVariants, "cheese-variant-count", 2, "how many flavours of cheese do you want?")
+
+	var withTomatoes bool
+	flag.BoolVar(&withTomatoes, "with-tomatoes", true, "do you want tomatoes on your pizza?")
+
+	var deliveryTime time.Duration
+	defaultDeliveryTime, _ := time.ParseDuration("19h30m")
+	flag.DurationVar(&deliveryTime, "delivery-time", defaultDeliveryTime, "At what time do you want us to deliver your pizza?")
+
+	// Pizza size argument using custom type
+	var size PizzaSize
+	flag.Var(&size, "size", "Size of the pizza. Allowed values: small, medium, large")
+	size = Medium // default value
+
+	flag.Parse()
+
+	tomatoesText := "with"
+	if !withTomatoes {
+		tomatoesText = "no"
+	}
+
+	fmt.Printf("Hello %v!\nYour %s pizza order with %d cheese variant(s) and %s tomatoes will be delivered at %s.\n", username, sizes[size], cheeseVariants, tomatoesText, deliveryTime)
+}
+
 ```
 
 You can also use the `flag.Var`{{}} method to convert the argument value into any Go type you want. In our example, we convert the `--size`{{}} argument into an enum-like value, with only a limited list of values allowed for this argument.
