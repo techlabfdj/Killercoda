@@ -19,11 +19,44 @@ go build &&
 > This command compiles and runs the project, booting up the server for you to test. Since this server runs continuously and doesn't return to the command prompt, you'll need to open a new terminal for subsequent testing. 
 
 Additionally, the source files for the web server are located in `~/datas`.   
-Feel free to explore them by opening the directory with the Theia editor."  
+Feel free to explore them by opening the directory with the Theia editor.  
 
 ## Using it
 
 Web server will start on :8080 and exposes a /datas path.
+
+### `POST /datas`{{}}
+
+* accepts application/json content
+* will store (in-memory) the data and assign it an id (uuidv4)
+* store is limited to 100 entries
+* returns 200 with added data with its id and created_at/modified_at dates
+
+*Example:*
+
+* JSON data sent in request body
+
+  ```json
+  {
+    "aaa": "bbb",
+    "ccc": "ddd"
+  }
+  ```{{}}
+
+* JSON returned response with 200 (OK) HTTP status code
+
+  ```json
+  {
+    "id": "b8984156-5767-48db-b6ae-833016cdbbc1",
+    "created_at": "2020-02-14T18:06:41.3767325+01:00",
+    "modified_at": "2020-02-14T18:06:41.3767325+01:00",
+    "aaa": "bbb",
+    "ccc": "ddd"
+  }
+  ```{{}}
+
+*Curl command line example :*  
+`curl -d '{"aaa": "bbb","ccc": "ddd"}' -H "Content-Type: application/json" -X POST http://127.0.0.1:8080/datas`{{exec}}
 
 ### `GET /datas?offset=x&limit=y`{{}}
 
@@ -68,38 +101,6 @@ Web server will start on :8080 and exposes a /datas path.
 *Curl command line example :*  
 `curl http://127.0.0.1:8080/datas?limit=2`{{exec}}
 
-### `POST /datas`{{}}
-
-* accepts application/json content
-* will store (in-memory) the data and assign it an id (uuidv4)
-* store is limited to 100 entries
-* returns 200 with added data with its id and created_at/modified_at dates
-
-*Example:*
-
-* JSON data sent in request body
-
-  ```json
-  {
-    "aaa": "bbb",
-    "ccc": "ddd"
-  }
-  ```{{}}
-
-* JSON returned response with 200 (OK) HTTP status code
-
-  ```json
-  {
-    "id": "b8984156-5767-48db-b6ae-833016cdbbc1",
-    "created_at": "2020-02-14T18:06:41.3767325+01:00",
-    "modified_at": "2020-02-14T18:06:41.3767325+01:00",
-    "aaa": "bbb",
-    "ccc": "ddd"
-  }
-  ```{{}}
-
-*Curl command line example :*  
-`curl -d '{"aaa": "bbb","ccc": "ddd"}' -H "Content-Type: application/json" -X POST http://127.0.0.1:8080/datas`{{exec}}
 
 ### `GET /datas/:id`{{}}
 
