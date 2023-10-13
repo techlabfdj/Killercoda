@@ -16,9 +16,10 @@ go build &&
 ./datas
 ```{{exec}}
 
-> This command compiles and runs the project, booting up the server for you to test. Since this server runs continuously and doesn't return to the command prompt, you'll need to open a new terminal for subsequent testing."
+> This command compiles and runs the project, booting up the server for you to test. Since this server runs continuously and doesn't return to the command prompt, you'll need to open a new terminal for subsequent testing. 
 
-
+Additionally, the source files for the web server are located in `~/datas`.   
+Feel free to explore them by opening the directory with the Theia editor."  
 
 ## Using it
 
@@ -154,7 +155,6 @@ Web server will start on :8080 and exposes a /datas path.
 
 *Curl command line example :*  
 `curl -X DELETE http://127.0.0.1:8080/datas/b8984156-5767-48db-b6ae-833016cdbbc1`{{exec}}
-
 
 
 # The End
