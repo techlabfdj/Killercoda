@@ -151,14 +151,20 @@ Try to execute your new code with differents values and see how the program beha
 You should have something similar to this:
 
 `go run environment.go`{{exec}}
+```bash
 # environment variable 'language' is missing
 # exit status 1
+```{{}}
 
 `language=es go run environment.go`{{exec}}
+```bash
 # Hola Mundo !
+```{{}}
 
 `language= go run environment.go`{{exec}}
+```bash
 # should log nothing
+```{{}}
 
 
 The `os.LookupEnv`{{}} function can also distinguish if the variable is absent (unset) versus if the variable is present but has an empty value. In our case, an empty value is an unsupported value. Let's do some refactoring:
