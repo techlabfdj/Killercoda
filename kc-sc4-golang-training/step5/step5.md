@@ -100,24 +100,31 @@ index 344c792..d4bdc18 100644
 
 You can try to run this code with various values for the `language` variable and look at the output:
 
+------
+
 `language=es go run environment.go`{{exec}}
 should log "Hola Mundo !"
 
+------
 `language=en-GB go run environment.go`{{exec}}
 should log "Hello World !"
 
+------
 `language=en-US go run environment.go`{{exec}}
 should log "Hello World !" again
 
+------
 `language=invalid go run environment.go`{{exec}}
 should log nothing
 
 
+------
 You can try to run the code with no environment variable, or with an empty value:
 
 `go run environment.go`{{exec}}
 should log nothing
 
+------
 `language= go run environment.go`{{exec}}`
 should log nothing
 
@@ -150,17 +157,20 @@ Try to execute your new code with differents values and see how the program beha
 
 You should have something similar to this:
 
+------
 `go run environment.go`{{exec}}
 ```bash
 # environment variable 'language' is missing
 # exit status 1
 ```{{}}
 
+------
 `language=es go run environment.go`{{exec}}
 ```bash
 # Hola Mundo !
 ```{{}}
 
+------
 `language= go run environment.go`{{exec}}
 ```bash
 # should log nothing
