@@ -125,7 +125,7 @@ You can try to run the code with no environment variable, or with an empty value
 should log nothing
 
 ------
-`language= go run environment.go`{{exec}}`
+`language= go run environment.go`{{exec}}
 should log nothing
 
 
