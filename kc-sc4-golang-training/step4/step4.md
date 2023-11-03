@@ -5,6 +5,7 @@ Go is a compiled language, so we can't run this source file directly: we need to
 For this, we need to run the `go install`{{}} command, along with our module name:
 
 ```bash
+clear
 ls
 go install training/basics/hello-world
 ```{{exec}}
@@ -17,7 +18,10 @@ In case of error, the error message is shown in the terminal. But if this comman
 
 The Go compiler has kicked in, compiled your source file into a binary file, and stored it inside `$GOPATH/bin`{{}} directory:  
 
-`ls $GOPATH/bin`{{exec}}  
+```bash
+clear 
+ls -al $GOPATH/bin
+```{{exec}}  
 
 ![Scan results](./images/ls-gopath-bin.png)
 
@@ -27,7 +31,10 @@ If you have correctly set up your `$PATH`{{}} variable during installation steps
 
 If you don't trust me, you can control that the program you ran is the one located under `$GOPATH/bin` directory too:  
 
-`which hello-world`{{exec}}  
+```bash
+clear 
+which hello-world
+```{{exec}}  
 
 ![Scan results](./images/hello-world-run.png)
 
