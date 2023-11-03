@@ -59,13 +59,13 @@ or
 
 For convenience, go commands accept paths relative to the working directory, and default to the package in the current working directory if no other path is given.
 
-Another possibility is running `go build`{{exec}} command. This is similar to `go run`{{exec}} as it will create a binary file, but this file will be placed in the current directory, instead of **$GOPATH/bin** directory for **go install**.
+Another possibility is running `go build .`{{exec}} command. This is similar to `go run`{{exec}} as it will create a binary file, but this file will be placed in the current directory, instead of **$GOPATH/bin** directory for **go install**.
 
 So a typical dev process would be:
 
 1. `go run file.go`{{}} to try the source file in a quick way
 1. control that the code behaves as expected
-1. `go build`{{}} to compile the source file locally
+1. `go build .`{{}} to compile the source file locally
 1. run that binary file, and check everything is fine
 1. `go install`{{}} to compile and make it available globally on the system
 
