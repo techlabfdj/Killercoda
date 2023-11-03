@@ -90,8 +90,6 @@ if len(username) == 0 {
 If you haven't managed to get it right, don't worry! You'll find the solution provided below.  
 <details>
 <summary>Full code</summary>
-
-    ```go
     package main
 
     import (
@@ -113,7 +111,6 @@ If you haven't managed to get it right, don't worry! You'll find the solution pr
 
             fmt.Printf("Hello %v !\n", username)
     }
-    ```
 </details>
 
 ## CLI Syntax
