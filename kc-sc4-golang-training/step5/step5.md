@@ -96,6 +96,8 @@ index 344c792..d4bdc18 100644
  }
 ```{{}}
 
+> tips : you could use the command `go fmt`{{exec}} to automaticaly format your Go source code. You could see [https://go.dev](https://go.dev/blog/gofmt) for more details.
+
 You can try to run this code with various values for the `language` variable and look at the output:
 
 `language=es go run environment.go`{{exec}}
