@@ -94,6 +94,8 @@ If you haven't managed to get it right, don't worry! You'll find the solution pr
 
     import (
             "flag"
+            "fmt"
+            "os"
     )
 
     func main() {
