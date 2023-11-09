@@ -12,7 +12,7 @@ We are starting this tutorial with an empty file and we don't reuse the code fro
 
 > From now on, we will use `main.go` as our main program file, our unique entrypoint. So create a new file named `main.go` in your command-line directory.
 
-`echo -e "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n}" > main.go`{{exec}}
+`echo -e "package main\n\nimport (\n\t\"fmt\"\n\t\"flag\"\n)\n\nfunc main() {\n}" > main.go`{{exec}}
 
 
 To read command line argument, the native [flag package](https://pkg.go.dev/flag) can help.
