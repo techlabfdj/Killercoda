@@ -12,7 +12,7 @@ We are starting this tutorial with an empty file and we don't reuse the code fro
 
 > From now on, we will use `main.go` as our main program file, our unique entrypoint. So create a new file named `main.go` in your command-line directory.
 
-`echo -e "package main\n\nimport (\n\t\"fmt\"\n\t\"os\"\n)\n\nfunc main() {\n}" > main.go`{{exec}}
+`echo -e "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc main() {\n}" > main.go`{{exec}}
 
 
 To read command line argument, the native [flag package](https://pkg.go.dev/flag) can help.
@@ -29,13 +29,13 @@ var username string
 
 Then, you can use the [`flag.StringVar function`](https://pkg.go.dev/flag#StringVar) to tell the module your are expecting a command line argument:
 
-`flag.Stringvar(&username, "firstname", "", "tell us what is your first name")`
+`flag.StringVar(&username, "firstname", "", "tell us what is your first name")`
 
 You pass the argument name to read (`"firstname"`{{}} here), a default value (`""`{{}}) and an usage message (more details on this message later).
 
 You also pass a **pointer** to your `username`{{}} variable. When the `flag`{{}} module will read the command line values, it will populate this variable reference with the read value.
 
-> While the `var`{{}} statement can go outside of the `main`{{}} function, all non-declaration statements should be declared inside a function body. So the `Stringvar`{{}} call should be placed inside the `main`{{}} function body.
+> While the `var`{{}} statement can go outside of the `main`{{}} function, all non-declaration statements should be declared inside a function body. So the `StringVar`{{}} call should be placed inside the `main`{{}} function body.
 
 Next, you can print the value using your variable:
 
@@ -86,6 +86,8 @@ if len(username) == 0 {
         os.Exit(1)
 }
 ```{{}}
+
+> Tips : Don't forget to import `os` package
 
 If you haven't managed to get it right, don't worry! You'll find the solution provided below.  
 <details>
