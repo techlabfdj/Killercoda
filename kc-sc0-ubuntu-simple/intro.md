@@ -12,7 +12,13 @@ The Killercoda desktop is divided into two main sections:
 
 In the left pane, Killercoda scenario scripts offer various available actions. Some of these actions are related to the displayed text, with the primary ones being `Copy` and `Exec`.
 - `Copy`: Used to copy the highlighted text to the clipboard.
+Let's try : `Copy this !`
 - `Exec`: Used to execute the highlighted text in the current terminal.
+Let's try : 
+```bash
+#execute this command
+ls -altr
+```
 
 Additional actions are provided for scenario navigation:
 - `Back` button: Takes you back to the previous step.
