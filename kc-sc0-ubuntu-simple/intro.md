@@ -18,7 +18,7 @@ Let's try :
 ```bash
 #execute this command
 ls -altr
-```
+```{{exec}}
 
 Additional actions are provided for scenario navigation:
 - `Back` button: Takes you back to the previous step.
