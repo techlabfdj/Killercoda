@@ -20,17 +20,17 @@ Additional actions are provided for scenario navigation:
 - `Check` button: This action initiates a background script that verifies whether the user has met the prerequisites to proceed to the next step. If all prerequisites are met, a green popup (XXX) is displayed, and the next scenario step is presented. Otherwise, an orange popup (XXX) appears, and the user remains on the current step.
 
 ### CHECK Button
-![Scan results](./assets/killercoda_check.PNG)
+![Scan results](./assets/killercoda_check.png)
 
 ### Successfull CHECK
-![Scan results](./assets/killercoda_check_successfull.PNG)
+![Scan results](./assets/killercoda_check_successfull.png)
 
 ### Unsuccessfull CHECK
-![Scan results](./assets/killercoda_check_unsuccessfull.PNG)
+![Scan results](./assets/killercoda_check_unsuccessfull.png)
 
 At the conclusion of the scenario, three new buttons will become available:
 
 - `Restart`: This button allows you to restart the current scenario.
 - `Scenarios`: Use this button to return to the scenario page.
 - `Feedback`: Feel free to click on this button if you'd like to provide feedback to the Killercoda support team.
-![Scan results](./assets/killercoda_end.PNG)
+![Scan results](./assets/killercoda_end.png)
