@@ -28,10 +28,10 @@ Additional actions are provided for scenario navigation:
 ### CHECK Button
 ![Scan results](./assets/killercoda_check.png)
 
-### Successfull CHECK
+### NEXT Button and Successfull CHECK
 ![Scan results](./assets/killercoda_check_successfull.png)
 
-### Unsuccessfull CHECK
+### NEXT Button and Unsuccessfull CHECK
 ![Scan results](./assets/killercoda_check_unsuccessfull.png)
 
 At the conclusion of the scenario, three new buttons will become available:
