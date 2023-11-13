@@ -1,0 +1,20 @@
+{
+  "title": "Killercoda environment discovery",
+  "details": {
+    "intro": {
+      "text": "intro.md"
+    },
+    "steps": [
+      {
+        "title": "Left Pane Actions",
+        "text": "step1/step1.md"
+      },
+      {
+        "title": "Right Pane Tools",
+        "text": "step2/step2.md"
+      }]
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}
