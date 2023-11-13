@@ -32,7 +32,7 @@ In the right pane, you can find two main tools:
 
 ## Traffic Port Accessor
 
-![Scan results](../assets/trafic_port_accessor.PNG)
+![Scan results](../assets/trafic_port_accessor.png)
 
 The traffic port accessor aims to simplify user access to HTTP services deployed on their training environments. Here are some key points:
 - The traffic port accessor exclusively supports the HTTP protocol.
