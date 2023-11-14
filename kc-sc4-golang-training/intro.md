@@ -4,6 +4,13 @@
 
 In this training, we will embark on a journey through the world of [GOLANG](http://golang.org) (Go), a robust programming language renowned for its efficiency and concurrency. 
 
+------
+>**Preamble:**   
+>If you are not familiar with the Killercoda environment, take the time to explore it through [the following training](https://killercoda.com/ytison/scenario/kc-sc0-killercoda-environment-tour)
+
+------
+
+
 ## **What Will We Cover?**
 1. **Setting Up Golang:**
    - You’ll begin by installing Golang on your system. This process involves creating essential directories within your `$HOME`{{}}, and downloading and extracting the necessary binaries.

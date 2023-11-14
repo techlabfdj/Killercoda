@@ -1,3 +1,9 @@
+------
+>**Preamble:**   
+>If you are not familiar with the Killercoda environment, take the time to explore it through [the following training](https://killercoda.com/ytison/scenario/kc-sc0-killercoda-environment-tour)
+
+------
+
 ## Prerequisites
 
 Since we are using a Docker container and thus the Docker engine, you must have [Docker](https://www.docker.com) installed on your host.  
