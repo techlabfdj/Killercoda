@@ -5,15 +5,16 @@ In the left pane, Killercoda scenario scripts offer various available actions. S
 Let's try : `Copy this !`
 - `Exec`: Used to execute the highlighted text in the current terminal.
 Let's try : 
+
 ```bash
 #execute this command
 ls -altr
-```{{exec}}
+```{{exec}}  
 
 Additional actions are provided for scenario navigation:
 - `Back` button: Takes you back to the previous step.
 - `Next` button: Moves you to the next step.
-- `Check` button: This action initiates a background script that verifies whether the user has met the prerequisites to proceed to the next step. If all prerequisites are met, a green popup (XXX) is displayed, and the next scenario step is presented. Otherwise, an orange popup (XXX) appears, and the user remains on the current step.
+- `Check` button: This action initiates a background script that verifies whether the user has met the prerequisites to proceed to the next step. If all prerequisites are met, **a green popup** is displayed, and the next scenario step is presented. Otherwise, **an orange popup appears**, and the user remains on the current step.
 
 ### CHECK Button
 ![Scan results](../assets/killercoda_check.png)
